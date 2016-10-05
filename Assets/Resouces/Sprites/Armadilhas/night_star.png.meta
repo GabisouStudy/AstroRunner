@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: b8c80e1136c43184fb220c04c2eb0567
-timeCreated: 1475679196
+timeCreated: 1475694963
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: night_star_0
+    21300002: night_star_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -45,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -59,7 +60,7 @@ TextureImporter:
         width: 620
         height: 620
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 54, y: -169}
@@ -142,6 +143,31 @@ TextureImporter:
         - {x: 85, y: -213}
         - {x: 72, y: -190}
         - {x: 70, y: -188}
+    - name: night_star_1
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 479
+        width: 140
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50, y: 31.5}
+        - {x: 32, y: 70.5}
+        - {x: 12, y: 90.5}
+        - {x: -28, y: 90.5}
+        - {x: -64, y: 35.5}
+        - {x: -70, y: -4.5}
+        - {x: -70, y: -32.5}
+        - {x: -50, y: -52.5}
+        - {x: -52, y: -70.5}
+        - {x: -52, y: -90.5}
+        - {x: 69, y: -90.5}
+        - {x: 70, y: -89.5}
+        - {x: 70, y: -2.5}
+        - {x: 52, y: 29.5}
     outline: []
   spritePackingTag: 
   userData: 
