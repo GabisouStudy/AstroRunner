@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: b8c80e1136c43184fb220c04c2eb0567
+timeCreated: 1475679196
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: night_star_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: night_star_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 40
+        width: 620
+        height: 620
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54, y: -169}
+        - {x: 90, y: -192}
+        - {x: 210, y: -252}
+        - {x: 250, y: -252}
+        - {x: 252, y: -250}
+        - {x: 252, y: -210}
+        - {x: 250, y: -208}
+        - {x: 232, y: -170}
+        - {x: 230, y: -168}
+        - {x: 212, y: -130}
+        - {x: 210, y: -128}
+        - {x: 194, y: -89}
+        - {x: 174, y: -68}
+        - {x: 186, y: -72}
+        - {x: 211, y: -74}
+        - {x: 212, y: -70}
+        - {x: 250, y: -52}
+        - {x: 252, y: -50}
+        - {x: 299, y: -33}
+        - {x: 310, y: -13}
+        - {x: 310, y: 27}
+        - {x: 212, y: 81}
+        - {x: 190, y: 72}
+        - {x: 188, y: 70}
+        - {x: 255, y: 208}
+        - {x: 252, y: 254}
+        - {x: 210, y: 251}
+        - {x: 208, y: 249}
+        - {x: 170, y: 231}
+        - {x: 168, y: 229}
+        - {x: 130, y: 211}
+        - {x: 128, y: 209}
+        - {x: 90, y: 191}
+        - {x: 88, y: 189}
+        - {x: 68, y: 174}
+        - {x: 72, y: 189}
+        - {x: 72, y: 209}
+        - {x: 70, y: 211}
+        - {x: 52, y: 249}
+        - {x: 64, y: 285}
+        - {x: 29, y: 310}
+        - {x: -52, y: 310}
+        - {x: -92, y: 213}
+        - {x: -205, y: 269}
+        - {x: -254, y: 251}
+        - {x: -251, y: 204}
+        - {x: -231, y: 169}
+        - {x: -229, y: 167}
+        - {x: -211, y: 129}
+        - {x: -209, y: 127}
+        - {x: -191, y: 90}
+        - {x: -189, y: 88}
+        - {x: -174, y: 68}
+        - {x: -188, y: 74}
+        - {x: -211, y: 74}
+        - {x: -298, y: 42}
+        - {x: -310, y: 13}
+        - {x: -310, y: -28}
+        - {x: -211, y: -81}
+        - {x: -185, y: -71}
+        - {x: -251, y: -210}
+        - {x: -251, y: -255}
+        - {x: -204, y: -252}
+        - {x: -169, y: -232}
+        - {x: -167, y: -230}
+        - {x: -129, y: -212}
+        - {x: -127, y: -210}
+        - {x: -90, y: -192}
+        - {x: -88, y: -190}
+        - {x: -68, y: -175}
+        - {x: -75, y: -185}
+        - {x: -71, y: -214}
+        - {x: -52, y: -250}
+        - {x: -50, y: -252}
+        - {x: -32, y: -290}
+        - {x: -12, y: -310}
+        - {x: 27, y: -310}
+        - {x: 85, y: -213}
+        - {x: 72, y: -190}
+        - {x: 70, y: -188}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

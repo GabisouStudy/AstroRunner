@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: 15c2bd4d8b555d64a986250b63b13d07
+timeCreated: 1475679189
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rocket_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rocket_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 40
+        width: 580
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 136, y: -65}
+        - {x: 154, y: -61}
+        - {x: 152, y: -42}
+        - {x: 190, y: -62}
+        - {x: 250, y: -62}
+        - {x: 290, y: -22}
+        - {x: 290, y: 21}
+        - {x: 252, y: 64}
+        - {x: 185, y: 61}
+        - {x: 188, y: 41}
+        - {x: 150, y: 61}
+        - {x: 134, y: 81}
+        - {x: 117, y: 95}
+        - {x: 134, y: 98}
+        - {x: 132, y: 180}
+        - {x: 28, y: 180}
+        - {x: 8, y: 160}
+        - {x: 8, y: 142}
+        - {x: -11, y: 144}
+        - {x: -34, y: 120}
+        - {x: -32, y: 101}
+        - {x: -209, y: 101}
+        - {x: -231, y: 79}
+        - {x: -231, y: 61}
+        - {x: -250, y: 61}
+        - {x: -290, y: 21}
+        - {x: -290, y: -22}
+        - {x: -250, y: -62}
+        - {x: -229, y: -82}
+        - {x: -209, y: -102}
+        - {x: -33, y: -123}
+        - {x: -14, y: -142}
+        - {x: 10, y: -162}
+        - {x: 28, y: -180}
+        - {x: 132, y: -180}
+        - {x: 134, y: -99}
+        - {x: 114, y: -83}
+        - {x: 131, y: -84}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

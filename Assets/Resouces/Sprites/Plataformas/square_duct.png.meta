@@ -1,0 +1,83 @@
+fileFormatVersion: 2
+guid: 036a0a94cc9a2664d8f8467b986b6761
+timeCreated: 1475677797
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: square_duct_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: square_duct_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 40
+        width: 780
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 373, y: 330}
+        - {x: 371, y: 332}
+        - {x: 352, y: 332}
+        - {x: 352, y: 350}
+        - {x: -352, y: 350}
+        - {x: -352, y: 332}
+        - {x: -370, y: 332}
+        - {x: -372, y: 330}
+        - {x: -372, y: 312}
+        - {x: -390, y: 312}
+        - {x: -390, y: -350}
+        - {x: 390, y: -350}
+        - {x: 390, y: 312}
+        - {x: 373, y: 312}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,93 @@
+fileFormatVersion: 2
+guid: 8928bb47fe344bf4eb4c07e45b8e1857
+timeCreated: 1475677791
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: screwed_platform_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: screwed_platform_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 40
+        width: 780
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 373, y: -100}
+        - {x: 373, y: -82}
+        - {x: 390, y: -82}
+        - {x: 390, y: 82}
+        - {x: 373, y: 82}
+        - {x: 373, y: 100}
+        - {x: 371, y: 102}
+        - {x: 352, y: 102}
+        - {x: 352, y: 120}
+        - {x: -352, y: 120}
+        - {x: -352, y: 102}
+        - {x: -370, y: 102}
+        - {x: -372, y: 100}
+        - {x: -372, y: 82}
+        - {x: -390, y: 82}
+        - {x: -390, y: -82}
+        - {x: -372, y: -82}
+        - {x: -372, y: -100}
+        - {x: -370, y: -102}
+        - {x: -352, y: -102}
+        - {x: -352, y: -120}
+        - {x: 352, y: -120}
+        - {x: 352, y: -102}
+        - {x: 371, y: -102}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
