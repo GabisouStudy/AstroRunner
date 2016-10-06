@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 31231c6a576b5834e8e05958ea55f5ce
-timeCreated: 1475766898
+guid: ffc3c1ecb26ccb949b3219f32fb8650f
+timeCreated: 1475763573
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: floor_0
-    21300002: floor_1
+    21300000: floor_end_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -28,7 +27,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -52,7 +51,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: floor_0
+    - name: floor_end_0
       rect:
         serializedVersion: 2
         x: 40
@@ -60,28 +59,17 @@ TextureImporter:
         width: 1200
         height: 380
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -600, y: 190}
+      - - {x: 583, y: 47}
+        - {x: 600, y: 47}
+        - {x: 600, y: 190}
+        - {x: -600, y: 190}
         - {x: -600, y: -190}
         - {x: 600, y: -190}
-        - {x: 600, y: 190}
-    - name: floor_1
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 40
-        width: 840
-        height: 380
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -420, y: 190}
-        - {x: -420, y: -190}
-        - {x: 420, y: -190}
-        - {x: 420, y: 190}
+        - {x: 600, y: -68}
+        - {x: 583, y: -68}
     outline: []
   spritePackingTag: 
   userData: 
