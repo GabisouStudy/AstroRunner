@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour {
             nextObjects = Tobjs[radom];
             lastObj = radom;
         }
-        Debug.Log(nextObj + "" + lastObj + "" + radom);
         return nextObjects = Tobjs[radom];
 
     }

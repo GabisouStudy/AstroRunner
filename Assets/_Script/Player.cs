@@ -32,7 +32,7 @@ public class Player : MonoBehaviour {
 	float velocityXSmoothing;
 
 	Controller2D controller;
-
+    public float limiteY;
 	void Start()
     {
         croushe = false;
@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
 
 	void Update() 
     {
+        if (this.transform.position.y < limiteY) Application.LoadLevel(Application.loadedLevel);
         Vector2 input = new Vector2(direction, Input.GetAxisRaw("Vertical"));
         if (direction.Equals(1)) spriteRenderer.flipX = false;
         else spriteRenderer.flipX = true;
@@ -85,7 +86,6 @@ public class Player : MonoBehaviour {
         {
             animator.enabled = false;
             spriteRenderer.sprite = sprite_Swipe;
-            Debug.Log("oi");
             if(direction > 0)
                 spriteRenderer.flipX = true;
             else spriteRenderer.flipX = false;
@@ -114,7 +114,8 @@ public class Player : MonoBehaviour {
 
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move (velocity * Time.deltaTime, input);
-
+            
+            
 		if (controller.collisions.above || controller.collisions.below) {
 			velocity.y = 0;
             if (Input.GetAxis("Vertical") < 0)
