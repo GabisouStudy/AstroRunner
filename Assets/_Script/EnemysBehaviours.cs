@@ -8,6 +8,8 @@ public class EnemysBehaviours : MonoBehaviour {
     Rigidbody2D rigidbody;
     public Transform player;
     public int rageAlert;
+    public Sprite spriteAlert;
+
 	void Start () {
         //alert = false;
         rigidbody = this.GetComponent<Rigidbody2D>();
@@ -32,7 +34,7 @@ public class EnemysBehaviours : MonoBehaviour {
         if(alert)
         {
             rigidbody.AddRelativeForce(-Vector2.right * 10);
-            print("Entrou");
+            this.GetComponent<SpriteRenderer>().sprite = spriteAlert;
         }
         else  
         {
