@@ -11,8 +11,7 @@ public class EnemysBehaviours : MonoBehaviour {
     public Sprite spriteAlert;
 
 	void Start () {
-
-        //alert = false;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = this.GetComponent<Rigidbody2D>();
         alert = false;
 	}
@@ -34,7 +33,7 @@ public class EnemysBehaviours : MonoBehaviour {
     {
         if(alert)
         {
-            rigidbody.AddRelativeForce(-Vector2.right * 10);
+            rigidbody.velocity =-Vector2.right * 6;
             this.GetComponent<SpriteRenderer>().sprite = spriteAlert;
         }
         else  
