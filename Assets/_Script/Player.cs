@@ -11,7 +11,9 @@ public class Player : MonoBehaviour {
 	float accelerationTimeGrounded = .1f;
 	float moveSpeed = 6;
     private Animator animator;
+    public Camera camera_;
     public Sprite sprite_Jump;
+    public Sprite sprite_Dead;
     public Sprite sprite_Croush;
     public Sprite sprite_Swipe;
     private SpriteRenderer spriteRenderer;
@@ -71,8 +73,8 @@ public class Player : MonoBehaviour {
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime, input);
             if (animator.enabled) animator.enabled = false;
-            spriteRenderer.sprite = sprite_Jump;
-
+            spriteRenderer.sprite = sprite_Dead;
+            camera_.transform.SetParent(null);
 
         }
         else if (!decrease)
