@@ -5,16 +5,32 @@ public class Controller2D : RaycastController {
 
 	float maxClimbAngle = 80;
 	float maxDescendAngle = 80;
-
+    public Player player;
 	public CollisionInfo collisions;
 	[HideInInspector]
 	public Vector2 playerInput;
+    public bool adjustedRay;
 
 	public override void Start() {
 		base.Start ();
 		collisions.faceDir = 1;
 
 	}
+    void Update() 
+    {
+        if(player.croushe && !adjustedRay)  
+        {
+            base.Start();
+            adjustedRay = true;
+            Debug.Log("oi");
+        }
+        else if (!player.croushe)
+        {
+            if (adjustedRay) base.Start();
+            adjustedRay = false;
+        }
+
+    }
 
 	public void Move(Vector3 velocity, bool standingOnPlatform) {
 		Move (velocity, Vector2.zero, standingOnPlatform);
@@ -22,6 +38,7 @@ public class Controller2D : RaycastController {
 
 	public void Move(Vector3 velocity, Vector2 input, bool standingOnPlatform = false) {
 		UpdateRaycastOrigins ();
+
 		collisions.Reset ();
 		collisions.velocityOld = velocity;
 		playerInput = input;

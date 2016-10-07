@@ -24,15 +24,14 @@ public class Player : MonoBehaviour {
 	public float wallSlideSpeedMax = 3;
 	public float wallStickTime = .25f;
 	float timeToWallUnstick;
-
 	float gravity;
 	float maxJumpVelocity;
 	float minJumpVelocity;
 	Vector3 velocity;
 	float velocityXSmoothing;
-
 	Controller2D controller;
     public float limiteY;
+    public LayerMask layerMask;
 	void Start()
     {
         croushe = false;
@@ -43,10 +42,12 @@ public class Player : MonoBehaviour {
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
         direction = 1;
+       
 	}
 
 	void Update() 
     {
+      
         if (this.transform.position.y < limiteY) Application.LoadLevel(Application.loadedLevel);
         Vector2 input = new Vector2(direction, Input.GetAxisRaw("Vertical"));
         if (direction.Equals(1)) spriteRenderer.flipX = false;
@@ -106,7 +107,7 @@ public class Player : MonoBehaviour {
 					}
 				}
                 
-                if (controller.collisions.below) {
+                if (controller.collisions.below && !croushe) {
 					velocity.y = maxJumpVelocity;
 				}
 			}
@@ -115,8 +116,12 @@ public class Player : MonoBehaviour {
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move (velocity * Time.deltaTime, input);
             
-            
-		if (controller.collisions.above || controller.collisions.below) {
+        if (controller.collisions.above || controller.collisions.below) {
+			velocity.y = 0;
+        }
+
+      
+		if (controller.collisions.below) {
 			velocity.y = 0;
             if (Input.GetAxis("Vertical") < 0)
             {
@@ -125,24 +130,28 @@ public class Player : MonoBehaviour {
                 GetComponent<BoxCollider2D>().offset = new Vector2(0, -1f);
                 GetComponent<BoxCollider2D>().size = new Vector2(4.77f, 3f);
                 croushe = true;
-
+                Debug.DrawLine(transform.position, new Vector2(transform.position.x, transform.position.y + 0.6f), Color.blue);
             }
-            else
+            else 
             {
-                GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
-                GetComponent<BoxCollider2D>().size = new Vector2(4.8f, 6.42f);
-                if(!animator.enabled) animator.enabled = true;
-                croushe = false;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 0.6f, layerMask);
+              
+                if (hit.collider == null)
+                {
+                    GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
+                    GetComponent<BoxCollider2D>().size = new Vector2(4.8f, 6.42f);
+                    if (!animator.enabled) animator.enabled = true;
+                    croushe = false;
+                }
+                else Debug.Log(hit.collider.gameObject);
+        
             }
         }
-        else
+     
+        if (!wallSliding && !controller.collisions.below)
         {
-            if(!wallSliding)
-            {
-                if (animator.enabled) animator.enabled = false;
-                 spriteRenderer.sprite = sprite_Jump;
-            }
-
+            if (animator.enabled) animator.enabled = false;
+            spriteRenderer.sprite = sprite_Jump;
         }
 
     }
