@@ -22,7 +22,6 @@ public class Controller2D : RaycastController {
         {
             base.Start();
             adjustedRay = true;
-            Debug.Log("oi");
         }
         else if (!player.croushe)
         {
