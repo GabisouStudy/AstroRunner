@@ -11,6 +11,8 @@ public class SpawnsObjectsManager : MonoBehaviour {
     private float myEnd;
     [SerializeField]
     private GameObject[] goods;
+    [SerializeField]
+    private int height;
 
     void Start () {
         if(!first)
@@ -21,12 +23,20 @@ public class SpawnsObjectsManager : MonoBehaviour {
 	void Update () {
 	
 	}
-  
+    public void ChangeHeight(int h)
+    {
+        height += h;
+        transform.position += Vector3.up * height * 10;
+    }
     void GeneratorOfMap()
     {
         int i = Random.Range(0, goods.Length - 1);
         if(i.Equals(0)) i = Random.Range(0, goods.Length - 1);
         GameObject gameObject = (GameObject)Instantiate(goods[i], transform.position + Vector3.right * myEnd*-1, Quaternion.identity);
+        if(this.tag.Equals("down"))
+        {
+            gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height - 1);
+        }
     }
 
 }
