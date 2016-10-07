@@ -6,7 +6,7 @@ public class EnemysBehaviours : MonoBehaviour {
     public string type;
     public bool alert;
     Rigidbody2D rigidbody;
-    public Transform player;
+    private Transform player;
     public int rageAlert;
     public Sprite spriteAlert;
 
