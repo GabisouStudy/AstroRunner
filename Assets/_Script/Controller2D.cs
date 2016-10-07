@@ -62,7 +62,6 @@ public class Controller2D : RaycastController {
 			Debug.DrawRay(rayOrigin, Vector2.right * directionX * rayLength,Color.red);
 
 			if (hit) {
-                if (hit.collider.gameObject.tag.Equals("Respawn")) Application.LoadLevel(Application.loadedLevel);
 
 				if (hit.distance == 0) {
 					continue;
@@ -112,7 +111,6 @@ public class Controller2D : RaycastController {
 			Debug.DrawRay(rayOrigin, Vector2.up * directionY * rayLength,Color.red);
 
 			if (hit) {
-                if (hit.collider.gameObject.tag.Equals("Respawn")) Application.LoadLevel(Application.loadedLevel);
 				if (hit.collider.tag == "Through") {
 					if (directionY == 1 || hit.distance == 0) {
 						continue;
@@ -146,7 +144,6 @@ public class Controller2D : RaycastController {
 			RaycastHit2D hit = Physics2D.Raycast(rayOrigin,Vector2.right * directionX,rayLength,collisionMask);
 
 			if (hit) {
-                if (hit.collider.gameObject.tag.Equals("Respawn")) Application.LoadLevel(Application.loadedLevel);
 				float slopeAngle = Vector2.Angle(hit.normal,Vector2.up);
 				if (slopeAngle != collisions.slopeAngle) {
 					velocity.x = (hit.distance - skinWidth) * directionX;
@@ -175,7 +172,6 @@ public class Controller2D : RaycastController {
 		RaycastHit2D hit = Physics2D.Raycast (rayOrigin, -Vector2.up, Mathf.Infinity, collisionMask);
 
 		if (hit) {
-            if (hit.collider.gameObject.tag.Equals("Respawn")) Application.LoadLevel(Application.loadedLevel);
 			float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 			if (slopeAngle != 0 && slopeAngle <= maxDescendAngle) {
 				if (Mathf.Sign(hit.normal.x) == directionX) {
