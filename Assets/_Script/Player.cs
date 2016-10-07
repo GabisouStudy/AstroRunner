@@ -54,6 +54,10 @@ public class Player : MonoBehaviour {
     {
         decrease = true;
     }
+    void GameOver()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
     void Update()
     {
         if(decrease)
@@ -61,20 +65,21 @@ public class Player : MonoBehaviour {
             Vector2 input = new Vector2(0, 0);
             velocity.y -= 1;
             controller.Move(velocity * Time.deltaTime, input);
+            Invoke("GameOver", 1.5f);
         }
         if (dead && !decrease)
         {
             Invoke("Decrease", 0.2f);
             Vector2 input = new Vector2(0,0);
             velocity.y = wallLeap.y;
-            this.GetComponent<Controller2D>().adjustedRay = true;
-            this.GetComponent<BoxCollider2D>().enabled = false;
+            this.GetComponent<Controller2D>().collisionMask = 0;
             velocity.x = 0;
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime, input);
             if (animator.enabled) animator.enabled = false;
             spriteRenderer.sprite = sprite_Dead;
             camera_.transform.SetParent(null);
+
 
         }
         else if (!decrease)

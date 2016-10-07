@@ -14,7 +14,7 @@ public class Controller2D : RaycastController {
 	public override void Start() {
 		base.Start ();
 		collisions.faceDir = 1;
-
+        
 	}
     void Update() 
     {
