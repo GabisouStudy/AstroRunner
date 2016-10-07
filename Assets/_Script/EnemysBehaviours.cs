@@ -11,6 +11,7 @@ public class EnemysBehaviours : MonoBehaviour {
     public Sprite spriteAlert;
 
 	void Start () {
+
         //alert = false;
         rigidbody = this.GetComponent<Rigidbody2D>();
         alert = false;
@@ -43,11 +44,14 @@ public class EnemysBehaviours : MonoBehaviour {
           
         }
     }
+  
+
     void OnCollisionEnter2D(Collision2D collision) {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == ("hatch")) Physics2D.IgnoreCollision(collision.gameObject.GetComponent<PolygonCollider2D>(), this.GetComponent<PolygonCollider2D>());
+        if (collision.gameObject.tag != ("hatch") || collision.gameObject.layer.Equals("Ground") || collision.gameObject.tag.Equals("Player")) Destroy(this.gameObject);
         if (collision.gameObject.tag.Equals("Player") && type.Equals("Rocket"))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            collision.gameObject.GetComponent<Player>().dead = true;
         }  
     }
 }
