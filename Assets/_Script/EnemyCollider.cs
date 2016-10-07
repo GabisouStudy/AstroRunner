@@ -7,7 +7,7 @@ public class EnemyCollider : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            collision.gameObject.GetComponent<Player>().dead = true;
         }
     }
 }
