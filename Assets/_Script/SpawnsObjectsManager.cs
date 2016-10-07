@@ -3,11 +3,19 @@ using System.Collections;
 
 public class SpawnsObjectsManager : MonoBehaviour {
 
-    public GameObject ground;
-    public Transform target_;
+    [SerializeField]
+    private bool first;
+    [SerializeField]
+    private float myStart;
+    [SerializeField]
+    private float myEnd;
+    [SerializeField]
+    private GameObject[] goods;
 
-	void Start () {
-        InvokeRepeating("GeneratorOfMap", 0f, 1f);
+    void Start () {
+        if(!first)
+            transform.position = transform.position + Vector3.right * myStart;
+        Invoke("GeneratorOfMap", 1);
 	}
 	
 	void Update () {
@@ -16,9 +24,9 @@ public class SpawnsObjectsManager : MonoBehaviour {
   
     void GeneratorOfMap()
     {
-        GameObject gameObject = (GameObject)Instantiate(ground, new Vector2(target_.position.x + 7.2f, 0), 
-            Quaternion.identity);
-        target_ = gameObject.transform;
+        int i = Random.Range(0, goods.Length - 1);
+        if(i.Equals(0)) i = Random.Range(0, goods.Length - 1);
+        GameObject gameObject = (GameObject)Instantiate(goods[i], transform.position + Vector3.right * myEnd*-1, Quaternion.identity);
     }
 
 }
