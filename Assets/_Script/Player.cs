@@ -96,7 +96,13 @@ public class Player : MonoBehaviour {
 		    velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 
 		    bool wallSliding = false;
+            if ((controller.collisions.left || controller.collisions.right)){
+                moveSpeed = 0;
+                if (animator.enabled) animator.enabled = false;
+                
+            }
 		    if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
+             
 			    wallSliding = true;
 
 			    if (velocity.y < -wallSlideSpeedMax) {
@@ -127,8 +133,7 @@ public class Player : MonoBehaviour {
                     spriteRenderer.flipX = true;
                 else spriteRenderer.flipX = false;
             }
-            if (Input.GetAxis("Vertical") >= 0) {
-			    if (Input.GetAxisRaw("Vertical")> 0) {
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)){
 				    if (wallSliding) {
                         direction = direction * -1;
                         if (wallDirX == input.x) {
@@ -146,7 +151,6 @@ public class Player : MonoBehaviour {
                     if (controller.collisions.below && !croushe) {
 					    velocity.y = maxJumpVelocity;
 				    }
-			    }
 		    }
 
 		    velocity.y += gravity * Time.deltaTime;
