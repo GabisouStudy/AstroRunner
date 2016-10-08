@@ -57,7 +57,6 @@ public class SwipeDetector : MonoBehaviour
                          }
                          else
                          {
-                             shrink = false;
                              jump = false;
                          }
       
