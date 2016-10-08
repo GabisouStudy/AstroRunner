@@ -30,6 +30,9 @@ public class LaserBehaviour : MonoBehaviour
             middle.transform.localPosition = Vector2.zero;
         }
 
+
+        start.transform.eulerAngles = new Vector3(0, 0, 0);
+        middle.transform.eulerAngles = new Vector3(0, 0, 0);
         // Define an "infinite" size, not too big but enough to go off screen
         float maxLaserSize = 20f;
         float currentLaserSize = maxLaserSize;
@@ -78,5 +81,10 @@ public class LaserBehaviour : MonoBehaviour
             end.transform.localPosition = new Vector2(currentLaserSize, 0f);
         }
 
+        end.transform.eulerAngles = new Vector3(0, 0, 0);
+
+        start.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        middle.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        end.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 }
