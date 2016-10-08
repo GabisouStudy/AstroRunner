@@ -1,14 +1,15 @@
 fileFormatVersion: 2
 guid: 92614f3e1f83b5c41a44768354204dbf
-timeCreated: 1475935797
+timeCreated: 1475938035
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: middle_0
+    21300002: middle_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -59,13 +60,28 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      - - {x: -50, y: -22}
+        - {x: 50, y: -22}
+        - {x: 50, y: 22}
+        - {x: -50, y: 22}
+    - name: middle_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 3
+        width: 32
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -22}
+        - {x: 16, y: -22}
+        - {x: 16, y: 22}
+        - {x: -16, y: 22}
     outline: []
   spritePackingTag: 
   userData: 

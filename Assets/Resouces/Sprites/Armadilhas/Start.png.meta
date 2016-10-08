@@ -8,7 +8,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -62,12 +62,10 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -4, y: 45.5}
-        - {x: -18, y: 24.5}
-        - {x: -18, y: -32.5}
-        - {x: 1, y: -45.5}
-        - {x: 18, y: -45.5}
-        - {x: 18, y: 45.5}
+      - - {x: -18, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 21.5}
+        - {x: -18, y: 21.5}
     outline: []
   spritePackingTag: 
   userData: 
