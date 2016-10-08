@@ -36,7 +36,8 @@ public class Player : MonoBehaviour {
 	Controller2D controller;
     public float limiteY;
     public LayerMask layerMask;
-    private SwipeDetector swipeDetector;
+    public InputMouse InputMouse_Up;
+    public InputMouse InputMouse_Down;
     void Start()
     {
         dead = false;
@@ -49,7 +50,6 @@ public class Player : MonoBehaviour {
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
         direction = 1;
-        swipeDetector = this.GetComponent<SwipeDetector>();
 
 
     }
@@ -136,10 +136,9 @@ public class Player : MonoBehaviour {
                     spriteRenderer.flipX = true;
                 else spriteRenderer.flipX = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space) || swipeDetector.jump || Input.GetMouseButtonUp(0) && !swipeDetector.shrink)
+            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.jump)
             {
-                swipeDetector.jump = false;
-
+                InputMouse_Up.jump = false;
                     if (wallSliding) {
                         direction = direction * -1;
                         if (wallDirX == input.x) {
@@ -169,9 +168,8 @@ public class Player : MonoBehaviour {
       
 		    if (controller.collisions.below) {
 			    velocity.y = 0;
-                if (swipeDetector.shrink || Input.GetAxisRaw("Vertical") < 0)
+                if (InputMouse_Down.shrink || Input.GetAxisRaw("Vertical") < 0)
                 {
-                    if(Input.GetMouseButtonDown(0)) swipeDetector.shrink = false;
                     spriteRenderer.sprite = sprite_Croush;
                     if (animator.enabled) animator.enabled = false;
                     GetComponent<BoxCollider2D>().offset = new Vector2(0, -1f);
