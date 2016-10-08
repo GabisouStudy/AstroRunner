@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 	public float timeToJumpApex = .4f;
 	float accelerationTimeAirborne = .2f;
 	float accelerationTimeGrounded = .1f;
-	float moveSpeed = 6;
+	public float moveSpeed = 6;
     private Animator animator;
     public Camera camera_;
     public Sprite sprite_Jump;
@@ -87,7 +87,7 @@ public class Player : MonoBehaviour {
         }
         else if (!decrease)
         {
-            if (this.transform.position.y < limiteY) Application.LoadLevel(Application.loadedLevel);
+            if (this.transform.position.y < limiteY) dead = true;
             Vector2 input = new Vector2(direction, Input.GetAxisRaw("Vertical"));
             if (direction.Equals(1)) spriteRenderer.flipX = false;
             else spriteRenderer.flipX = true;
