@@ -78,13 +78,13 @@ public class LaserBehaviour : MonoBehaviour
         // End?
         if (end != null)
         {
+            end.transform.eulerAngles = new Vector3(0, 0, 0);
+            end.transform.localRotation = Quaternion.Euler(0, 0, 0);
             end.transform.localPosition = new Vector2(currentLaserSize, 0f);
         }
 
-        end.transform.eulerAngles = new Vector3(0, 0, 0);
-
         start.transform.localRotation = Quaternion.Euler(0, 0, 0);
         middle.transform.localRotation = Quaternion.Euler(0, 0, 0);
-        end.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
     }
 }

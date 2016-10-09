@@ -38,9 +38,11 @@ public class EnemysBehaviours : MonoBehaviour {
         }
         else  
         {
-            if (this.transform.position.x < player.transform.position.x + rageAlert)
-            alert = true;
-          
+ 
+            if(this.transform.position.y + 2 > player.transform.position.y && this.transform.position.y - 2 < player.transform.position.y)
+                if (this.transform.position.x < player.transform.position.x + rageAlert)
+                    alert = true; 
+        
         }
     }
   

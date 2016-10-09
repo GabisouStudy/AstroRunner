@@ -130,7 +130,7 @@ public class Player : MonoBehaviour {
 		    }
             if(wallSliding)
             {
-                animator.enabled = false;
+                if(animator.enabled) animator.enabled = false;
                 spriteRenderer.sprite = sprite_Swipe;
                 if(direction > 0)
                     spriteRenderer.flipX = true;
@@ -183,10 +183,11 @@ public class Player : MonoBehaviour {
               
                     if (hit.collider == null)
                     {
+                        croushe = false;
                         GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                         GetComponent<BoxCollider2D>().size = new Vector2(4.8f, 6.42f);
                         if (!animator.enabled) animator.enabled = true;
-                        croushe = false;
+                        
                     }
                     else Debug.Log(hit.collider.gameObject);
         
