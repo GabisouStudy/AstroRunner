@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
     public Sprite sprite_Dead;
     public Sprite sprite_Croush;
     public Sprite sprite_Swipe;
+    public Sprite sprite_Stop;
     private SpriteRenderer spriteRenderer;
     public int direction;
     public bool croushe;
@@ -102,7 +103,7 @@ public class Player : MonoBehaviour {
             if ((controller.collisions.left || controller.collisions.right)){
                 moveSpeed = 0;
                 if (animator.enabled) animator.enabled = false;
-                
+
             }
 		    if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
              

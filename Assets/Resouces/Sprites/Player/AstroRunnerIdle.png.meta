@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 919ed3eec2ed97046ab11dd157d6c065
+timeCreated: 1476026406
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: AstroRunnerIdle_0
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: AstroRunnerIdle_0
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 160
+        width: 340
+        height: 660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 114, y: -268}
+        - {x: 94, y: -266}
+        - {x: 108, y: -132}
+        - {x: 108, y: -150}
+        - {x: 110, y: -152}
+        - {x: 130, y: -152}
+        - {x: 132, y: -150}
+        - {x: 132, y: -132}
+        - {x: 150, y: -132}
+        - {x: 152, y: -130}
+        - {x: 152, y: -50}
+        - {x: 150, y: -48}
+        - {x: 132, y: -48}
+        - {x: 132, y: 30}
+        - {x: 130, y: 32}
+        - {x: 112, y: 32}
+        - {x: 132, y: 70}
+        - {x: 132, y: 88}
+        - {x: 150, y: 88}
+        - {x: 152, y: 90}
+        - {x: 170, y: 127}
+        - {x: 170, y: 231}
+        - {x: 152, y: 231}
+        - {x: 152, y: 269}
+        - {x: 150, y: 271}
+        - {x: 132, y: 271}
+        - {x: 132, y: 289}
+        - {x: 130, y: 291}
+        - {x: 112, y: 291}
+        - {x: 112, y: 309}
+        - {x: 110, y: 311}
+        - {x: 73, y: 330}
+        - {x: -32, y: 330}
+        - {x: -32, y: 311}
+        - {x: -70, y: 311}
+        - {x: -72, y: 309}
+        - {x: -72, y: 291}
+        - {x: -90, y: 291}
+        - {x: -92, y: 289}
+        - {x: -92, y: 271}
+        - {x: -110, y: 271}
+        - {x: -112, y: 269}
+        - {x: -132, y: 229}
+        - {x: -132, y: 130}
+        - {x: -130, y: 128}
+        - {x: -112, y: 128}
+        - {x: -112, y: 90}
+        - {x: -110, y: 88}
+        - {x: -92, y: 72}
+        - {x: -110, y: 72}
+        - {x: -152, y: 30}
+        - {x: -170, y: -7}
+        - {x: -170, y: -152}
+        - {x: -150, y: -172}
+        - {x: -92, y: -172}
+        - {x: -92, y: -310}
+        - {x: -90, y: -312}
+        - {x: -72, y: -312}
+        - {x: -72, y: -330}
+        - {x: 112, y: -330}
+        - {x: 132, y: -310}
+        - {x: 132, y: -290}
+        - {x: 130, y: -288}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
