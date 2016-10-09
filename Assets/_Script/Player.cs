@@ -170,8 +170,8 @@ public class Player : MonoBehaviour {
 			    velocity.y = 0;
                 if (InputMouse_Down.shrink || Input.GetAxisRaw("Vertical") < 0)
                 {
-                    spriteRenderer.sprite = sprite_Croush;
                     if (animator.enabled) animator.enabled = false;
+                    spriteRenderer.sprite = sprite_Croush;
                     GetComponent<BoxCollider2D>().offset = new Vector2(0, -1f);
                     GetComponent<BoxCollider2D>().size = new Vector2(4.77f, 3f);
                     croushe = true;
@@ -193,7 +193,7 @@ public class Player : MonoBehaviour {
                 }
             }
      
-            if (!wallSliding && !controller.collisions.below)
+            if (!wallSliding && !controller.collisions.below && !croushe)
             {
                 if (animator.enabled) animator.enabled = false;
                 spriteRenderer.sprite = sprite_Jump;
