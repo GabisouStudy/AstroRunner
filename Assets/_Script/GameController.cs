@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
         {
             recorde = 0;
         }
-        t_Recorde.text = "Record: " + Mathf.Floor(recorde);
+        t_Recorde.text = "" + Mathf.Floor(recorde);
 
     }
 
@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
         if(player.moveSpeed != 0 && !player.dead)
         {
             score += 5 * Time.deltaTime;
-            t_Score.text = "Score: " + Mathf.Floor(score);
+            t_Score.text = "" + Mathf.Floor(score);
         }
         if (player.dead)
         {

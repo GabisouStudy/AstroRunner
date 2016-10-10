@@ -15,7 +15,7 @@ public class SpawnsObjectsManager : MonoBehaviour {
     private GameObject[] lateral;
     [SerializeField]
     private GameObject[] goods;
-    [SerializeField]
+
     private int height;
 
     void Start () {
