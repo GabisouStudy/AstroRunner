@@ -23,12 +23,15 @@ public class SpawnsObjectsManager : MonoBehaviour {
             transform.position = transform.position + Vector3.right * myStart;
         if (lateral.Length > 0)
             GenerateLateral();
-        Invoke("GeneratorOfMap", 1);
+        if (!InputMouse.tuto && !InputMouse.menu)
+            Invoke("GeneratorOfMap", 1);
+        else
+            Invoke("GeneratorOfMap", 1.4f);
 	}
 	
 	void GenerateLateral ()
     {
-        int i = Random.Range(-1, lateral.Length+1);
+        int i = Random.Range(-1, lateral.Length + 1);
         if(i.Equals(lateral.Length))
         {
             Instantiate(lateral[0], transform.position - Vector3.right * lateral[0].GetComponent<SpawnsObjectsManager>().GetMyStart(), Quaternion.identity);
@@ -55,7 +58,9 @@ public class SpawnsObjectsManager : MonoBehaviour {
     void GeneratorOfMap()
     {
         int i = Random.Range(0, goods.Length);
-        if(canRepeat && i.Equals(0)) i = Random.Range(0, goods.Length);
+        if (canRepeat && i.Equals(0)) i = Random.Range(0, goods.Length);
+        if (InputMouse.tuto)
+            i = 0;
         GameObject gameObject = (GameObject)Instantiate(goods[i], transform.position + Vector3.right * myEnd*-1, Quaternion.identity);
         if(this.tag.Equals("down"))
         {

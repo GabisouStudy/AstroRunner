@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if(player.moveSpeed != 0 && !player.dead)
+        if(player.moveSpeed != 0 && !player.dead )
         {
             score += 5 * Time.deltaTime;
             t_Score.text = "" + Mathf.Floor(score);

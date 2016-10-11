@@ -86,7 +86,7 @@ public class Player : MonoBehaviour {
 
 
         }
-        else if (!decrease)
+        else if (!decrease && !InputMouse.menu)
         {
             if (this.transform.position.y < limiteY) dead = true;
             Vector2 input = new Vector2(direction, Input.GetAxisRaw("Vertical"));
@@ -137,9 +137,9 @@ public class Player : MonoBehaviour {
                     spriteRenderer.flipX = true;
                 else spriteRenderer.flipX = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.jump)
+            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump())
             {
-                InputMouse_Up.jump = false;
+                InputMouse_Up.SetJump(false);
                     if (wallSliding) {
                         direction = direction * -1;
                         if (wallDirX == input.x) {
@@ -169,7 +169,7 @@ public class Player : MonoBehaviour {
       
 		    if (controller.collisions.below) {
 			    velocity.y = 0;
-                if (InputMouse_Down.shrink || Input.GetAxisRaw("Vertical") < 0)
+                if (InputMouse_Down.GetShrink() || Input.GetAxisRaw("Vertical") < 0)
                 {
                     if (animator.enabled) animator.enabled = false;
                     spriteRenderer.sprite = sprite_Croush;

@@ -11,6 +11,12 @@ public class PlataformBehaviuor : MonoBehaviour {
         call = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag.Equals("Player"))
+            Invoke("Decrease", 4f);
+
+    }
 	void Update () {
         if (!call && player.position.x > this.transform.position.x)
         {
