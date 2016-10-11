@@ -9,6 +9,8 @@ public class MenuController : MonoBehaviour {
     private GameController gc;
     [SerializeField]
     private GameObject tuto;
+    [SerializeField]
+    private Animator[] tut;
 
 
 	void Update () {
@@ -22,8 +24,8 @@ public class MenuController : MonoBehaviour {
             if (!InputMouse.tuto)
             {
                 gc.enabled = true;
-                //change to start animation
-                Destroy(tuto);
+                foreach(Animator i in tut)
+                    i.SetBool("end", true);
                 Destroy(this.gameObject);
             }
         }
