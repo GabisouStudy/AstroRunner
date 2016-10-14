@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: 000be41aa3e156d498f1bbbf41e0f7fd
+timeCreated: 1476464564
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: AstroRunnerPoltrona_0
+    21300002: AstroRunnerPoltrona_1
+    21300004: AstroRunnerPoltrona_2
+    21300006: AstroRunnerPoltrona_3
+    21300008: AstroRunnerPoltrona_4
+    21300010: AstroRunnerPoltrona_5
+    21300012: AstroRunnerPoltrona_6
+    21300014: AstroRunnerPoltrona_7
+    21300016: AstroRunnerPoltrona_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: AstroRunnerPoltrona_0
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 40
+        width: 541
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.582653, y: 51.484406}
+        - {x: 23.582653, y: 69.484406}
+        - {x: -28.417347, y: 69.484406}
+        - {x: -54.417347, y: 41.484406}
+        - {x: -54.417347, y: -5.5155945}
+        - {x: -29.417347, y: -67.515594}
+        - {x: 25.582653, y: -67.515594}
+        - {x: 30.582653, y: -64.515594}
+        - {x: 48.582653, y: -12.5155945}
+        - {x: 54.582653, y: 5.4844055}
+    - name: AstroRunnerPoltrona_1
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 40
+        width: 576
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.962555, y: 69.484406}
+        - {x: -57.962555, y: 58.484406}
+        - {x: -57.962555, y: -35.515594}
+        - {x: -47.962555, y: -67.515594}
+        - {x: 58.037445, y: -67.515594}
+        - {x: 58.037445, y: 69.484406}
+    - name: AstroRunnerPoltrona_2
+      rect:
+        serializedVersion: 2
+        x: 2580
+        y: 40
+        width: 541
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39.5058, y: 69.484406}
+        - {x: -53.5058, y: 63.484406}
+        - {x: -53.5058, y: -2.5155945}
+        - {x: -30.505798, y: -65.515594}
+        - {x: -24.505798, y: -67.515594}
+        - {x: 36.4942, y: -67.515594}
+        - {x: 55.4942, y: -19.515594}
+        - {x: 55.4942, y: 62.484406}
+        - {x: 46.4942, y: 69.484406}
+    - name: AstroRunnerPoltrona_3
+      rect:
+        serializedVersion: 2
+        x: 3677
+        y: 40
+        width: 626
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.03351, y: 69.484406}
+        - {x: -62.03351, y: 12.4844055}
+        - {x: -62.03351, y: -33.515594}
+        - {x: -33.03351, y: -67.515594}
+        - {x: 39.96649, y: -67.515594}
+        - {x: 63.96649, y: -47.515594}
+        - {x: 63.96649, y: 44.484406}
+        - {x: 50.96649, y: 69.484406}
+    - name: AstroRunnerPoltrona_4
+      rect:
+        serializedVersion: 2
+        x: 4859
+        y: 40
+        width: 542
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.0943, y: 69.484406}
+        - {x: -28.0943, y: 58.484406}
+        - {x: -53.0943, y: 43.484406}
+        - {x: -54.0943, y: 39.484406}
+        - {x: -54.0943, y: 3.4844055}
+        - {x: -33.0943, y: -65.515594}
+        - {x: -27.0943, y: -67.515594}
+        - {x: 32.9057, y: -67.515594}
+        - {x: 55.9057, y: -20.515594}
+        - {x: 55.9057, y: 50.484406}
+        - {x: 20.9057, y: 69.484406}
+    - name: AstroRunnerPoltrona_5
+      rect:
+        serializedVersion: 2
+        x: 5962
+        y: 40
+        width: 581
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.424316, y: 69.484406}
+        - {x: -58.424316, y: 48.484406}
+        - {x: -58.424316, y: -50.515594}
+        - {x: -52.424316, y: -67.515594}
+        - {x: 36.575684, y: -67.515594}
+        - {x: 40.575684, y: -66.515594}
+        - {x: 58.575684, y: -3.5155945}
+        - {x: 58.575684, y: 52.484406}
+        - {x: 25.575684, y: 69.484406}
+    - name: AstroRunnerPoltrona_6
+      rect:
+        serializedVersion: 2
+        x: 7139
+        y: 40
+        width: 541
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.516846, y: 51.484406}
+        - {x: 23.516846, y: 69.484406}
+        - {x: -28.483154, y: 69.484406}
+        - {x: -54.483154, y: 41.484406}
+        - {x: -54.483154, y: -5.5155945}
+        - {x: -29.483154, y: -67.515594}
+        - {x: 25.516846, y: -67.515594}
+        - {x: 30.516846, y: -64.515594}
+        - {x: 48.516846, y: -12.5155945}
+        - {x: 54.516846, y: 5.4844055}
+    - name: AstroRunnerPoltrona_7
+      rect:
+        serializedVersion: 2
+        x: 8241
+        y: 40
+        width: 621
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.487183, y: 64.484406}
+        - {x: 24.487183, y: 69.484406}
+        - {x: -23.512817, y: 69.484406}
+        - {x: -36.512817, y: 52.484406}
+        - {x: -58.512817, y: 20.484406}
+        - {x: -61.512817, y: 12.4844055}
+        - {x: -61.512817, y: -19.515594}
+        - {x: -58.512817, y: -20.515594}
+        - {x: -29.512817, y: -67.515594}
+        - {x: 30.487183, y: -67.515594}
+        - {x: 36.487183, y: -66.515594}
+        - {x: 63.487183, y: -23.515594}
+        - {x: 63.487183, y: 14.4844055}
+    - name: AstroRunnerPoltrona_8
+      rect:
+        serializedVersion: 2
+        x: 9378
+        y: 40
+        width: 621
+        height: 680
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.44397, y: 64.484406}
+        - {x: 24.44397, y: 69.484406}
+        - {x: -23.55603, y: 69.484406}
+        - {x: -36.55603, y: 52.484406}
+        - {x: -58.55603, y: 20.484406}
+        - {x: -61.55603, y: 12.4844055}
+        - {x: -61.55603, y: -19.515594}
+        - {x: -58.55603, y: -20.515594}
+        - {x: -29.55603, y: -67.515594}
+        - {x: 30.44397, y: -67.515594}
+        - {x: 36.44397, y: -66.515594}
+        - {x: 63.44397, y: -23.515594}
+        - {x: 63.44397, y: 14.4844055}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

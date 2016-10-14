@@ -26,7 +26,7 @@ public class SpawnsObjectsManager : MonoBehaviour {
         if (!InputMouse.tuto && !InputMouse.menu)
             Invoke("GeneratorOfMap", 1);
         else
-            Invoke("GeneratorOfMap", 1.4f);
+            Invoke("GeneratorOfMap", 2f);
 	}
 	
 	void GenerateLateral ()

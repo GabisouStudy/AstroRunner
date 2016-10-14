@@ -51,8 +51,6 @@ public class Player : MonoBehaviour {
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
         direction = 1;
-
-
     }
     void Decrease()
     {
@@ -139,24 +137,7 @@ public class Player : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump())
             {
-                InputMouse_Up.SetJump(false);
-                    if (wallSliding) {
-                        direction = direction * -1;
-                        if (wallDirX == input.x) {
-						    velocity.x = -wallDirX * wallJumpClimb.x;
-						    velocity.y = wallJumpClimb.y;
-					    } else if (input.x == 0) {
-						    velocity.x = -wallDirX * wallJumpOff.x;
-						    velocity.y = wallJumpOff.y;
-					    } else {
-						    velocity.x = -wallDirX * wallLeap.x;
-						    velocity.y = wallLeap.y;
-					    }
-				    }
-                
-                    if (controller.collisions.below && !croushe) {
-					    velocity.y = maxJumpVelocity;
-				    }
+                Jump(wallSliding,wallDirX,int.Parse(input.x.ToString()));
 		    }
 
 		    velocity.y += gravity * Time.deltaTime;
@@ -202,5 +183,38 @@ public class Player : MonoBehaviour {
             }
 
         }
+    }
+    public void Jump(bool wallSliding, int wallDirX, int input)
+    {
+        InputMouse_Up.SetJump(false);
+        if (wallSliding)
+        {
+            direction = direction * -1;
+            if (wallDirX == input)
+            {
+                velocity.x = -wallDirX * wallJumpClimb.x;
+                velocity.y = wallJumpClimb.y;
+            }
+            else if (input == 0)
+            {
+                velocity.x = -wallDirX * wallJumpOff.x;
+                velocity.y = wallJumpOff.y;
+            }
+            else
+            {
+                velocity.x = -wallDirX * wallLeap.x;
+                velocity.y = wallLeap.y;
+            }
+        }
+
+        if (controller.collisions.below && !croushe)
+        {
+            velocity.y = maxJumpVelocity;
+        }
+    }
+    public void Jump()
+    {
+        InputMouse_Up.SetJump(false);
+        velocity.y = maxJumpVelocity;
     }
 }
