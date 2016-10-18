@@ -59,8 +59,6 @@ public class SpawnsObjectsManager : MonoBehaviour {
     {
         int i = Random.Range(0, goods.Length);
         if (canRepeat && i.Equals(0)) i = Random.Range(0, goods.Length);
-        if (InputMouse.tuto)
-            i = 0;
         GameObject gameObject = (GameObject)Instantiate(goods[i], transform.position + Vector3.right * myEnd*-1, Quaternion.identity);
         if(this.tag.Equals("down"))
         {

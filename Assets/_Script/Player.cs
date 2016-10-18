@@ -84,7 +84,7 @@ public class Player : MonoBehaviour {
 
 
         }
-        else if (!decrease && !InputMouse.menu)
+        else if (!decrease && !InputMouse.menu && !InputMouse.tuto)
         {
             if (this.transform.position.y < limiteY) dead = true;
             Vector2 input = new Vector2(direction, Input.GetAxisRaw("Vertical"));

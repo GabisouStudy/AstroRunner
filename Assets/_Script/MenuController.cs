@@ -10,7 +10,7 @@ public class MenuController : MonoBehaviour {
     [SerializeField]
     private GameObject tuto;
     [SerializeField]
-    private Animator[] tut;
+    private GameObject tut;
     [SerializeField]
     private Sprite sprite;
     [SerializeField]
@@ -27,19 +27,18 @@ public class MenuController : MonoBehaviour {
         {
             if (start != null && g.Equals(0))
             {
-                start.enabled = true;                
-                player.GetComponent<Animator>().runtimeAnimatorController = z;
-                player.GetComponent<Player>().Jump();
-                spriteR.sprite = sprite;
-                spriteR.sortingOrder = 1;
                 tuto.SetActive(true);
+                tut.SetActive(true);
                 g = 1;
             }
             if (!InputMouse.tuto)
             {
                 gc.enabled = true;
-                foreach(Animator i in tut)
-                    i.SetBool("end", true);
+                start.enabled = true;
+                player.GetComponent<Animator>().runtimeAnimatorController = z;
+                player.GetComponent<Player>().Jump();
+                spriteR.sprite = sprite;
+                spriteR.sortingOrder = 1;
                 Destroy(this.gameObject);
             }
         }
