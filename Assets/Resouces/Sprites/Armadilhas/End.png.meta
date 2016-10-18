@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: af1fa1c08db02aa4a9510d6df617d621
-timeCreated: 1475935770
-licenseType: Free
+timeCreated: 1476798529
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: End_0
@@ -60,47 +60,15 @@ TextureImporter:
         width: 61
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 27.5, y: 32}
-        - {x: 3.5, y: 50}
-        - {x: -25.5, y: 50}
-        - {x: -27.5, y: 47}
-        - {x: -27.5, y: -50}
-        - {x: 6.5, y: -50}
-        - {x: 15.5, y: -41}
-        - {x: 24.5, y: -31}
-        - {x: 30.5, y: -17}
-        - {x: 30.5, y: 19}
-      - - {x: -30.5, y: -40}
-        - {x: -27.5, y: -39}
-        - {x: -27.5, y: -34}
-        - {x: -29.5, y: -32}
-        - {x: -30.5, y: -32}
-      - - {x: -26.5, y: -16}
-        - {x: -27.5, y: -18}
-        - {x: -27.5, y: -22}
-        - {x: -25.5, y: -24}
-        - {x: -19.5, y: -24}
-        - {x: -19.5, y: -16}
-      - - {x: -30.5, y: 44}
-        - {x: -30.5, y: 36}
-        - {x: -25.5, y: 36}
-        - {x: -23.5, y: 38}
-        - {x: -23.5, y: 42}
-        - {x: -25.5, y: 44}
-    - name: End_1
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 91
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      - - {x: -19.5, y: 40}
+        - {x: -19.5, y: -41}
+        - {x: 12.5, y: -41}
+        - {x: 14.5, y: -34}
+        - {x: 14.5, y: 30}
+        - {x: -6.5, y: 40}
     outline: []
   spritePackingTag: 
   userData: 
