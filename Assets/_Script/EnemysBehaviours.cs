@@ -52,9 +52,14 @@ public class EnemysBehaviours : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == ("hatch")) Physics2D.IgnoreCollision(collision.gameObject.GetComponent<PolygonCollider2D>(), this.GetComponent<PolygonCollider2D>());
-        if (collision.gameObject.tag != ("hatch") && alert || collision.gameObject.layer.Equals("Ground") && alert || collision.gameObject.tag.Equals("Player") && alert) Destroy(this.gameObject);
+            if (collision.gameObject.tag != ("hatch") && alert || collision.gameObject.layer.Equals("Ground") && alert || collision.gameObject.tag.Equals("Player") && alert)
+            {
+                this.GetComponent<SpriteRenderer>().enabled = false;
+            }
         if (collision.gameObject.tag.Equals("Player") && type.Equals("Rocket"))
         {
+            this.GetComponent<AudioSource>().Stop();
+            this.GetComponent<AudioSource>().Play();
             collision.gameObject.GetComponent<Player>().dead = true;
         }  
     }
