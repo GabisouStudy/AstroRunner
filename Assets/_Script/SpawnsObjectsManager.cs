@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnsObjectsManager : MonoBehaviour {
 
+    private Player player;
     [SerializeField]
     private bool first;
     [SerializeField]
@@ -19,6 +20,7 @@ public class SpawnsObjectsManager : MonoBehaviour {
     private int height;
 
     void Start () {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         if(!first)
             transform.position = transform.position + Vector3.right * myStart;
         if (lateral.Length > 0)
@@ -57,16 +59,23 @@ public class SpawnsObjectsManager : MonoBehaviour {
     }
     void GeneratorOfMap()
     {
-        int i = Random.Range(0, goods.Length);
-        if (canRepeat && i.Equals(0)) i = Random.Range(0, goods.Length);
-        GameObject gameObject = (GameObject)Instantiate(goods[i], transform.position + Vector3.right * myEnd*-1, Quaternion.identity);
-        if(this.tag.Equals("down"))
+        if (player.moveSpeed > 0 && player.direction > 0)
         {
-            gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height - 1);
+            int i = Random.Range(0, goods.Length);
+            if (canRepeat && i.Equals(0)) i = Random.Range(0, goods.Length);
+            GameObject gameObject = (GameObject)Instantiate(goods[i], transform.position + Vector3.right * myEnd*-1, Quaternion.identity);
+            if(this.tag.Equals("down"))
+            {
+                gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height - 1);
+            }
+            if (this.tag.Equals("up"))
+            {
+                gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height + 1);
+            }
         }
-        if (this.tag.Equals("up"))
-        {
-            gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height + 1);
+        else
+        {            
+            Invoke("GeneratorOfMap", 1);
         }
     }
 
