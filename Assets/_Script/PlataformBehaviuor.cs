@@ -26,9 +26,13 @@ public class PlataformBehaviuor : MonoBehaviour {
     }
     void Decrease()
     {
-        this.GetComponent<Rigidbody2D>().isKinematic = false;
-        this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        this.GetComponent<Rigidbody2D>().gravityScale = 1;
+        try
+        {
+            this.GetComponent<Rigidbody2D>().isKinematic = false;
+            this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            this.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+        catch { }
         Invoke("Destroy", 4f);
     }
     void Destroy()

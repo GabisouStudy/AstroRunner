@@ -12,6 +12,8 @@ public class MenuController : MonoBehaviour {
     [SerializeField]
     private GameObject tut;
     [SerializeField]
+    private GameObject logo;
+    [SerializeField]
     private Sprite sprite;
     [SerializeField]
     private SpriteRenderer spriteR;
@@ -27,6 +29,7 @@ public class MenuController : MonoBehaviour {
         {
             if (start != null && g.Equals(0))
             {
+                logo.SetActive(false);
                 tuto.SetActive(true);
                 tut.SetActive(true);
                 g = 1;
