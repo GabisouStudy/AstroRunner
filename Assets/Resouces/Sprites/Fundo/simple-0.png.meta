@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: 306c1e10218c0ee449a4b370fb15c36f
-timeCreated: 1476023248
-licenseType: Free
+timeCreated: 1477069065
+licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: simple-0_0
+    21300002: simple-0_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +40,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +51,37 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: simple-0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 6000
+        height: 6000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1024, y: 1024}
+        - {x: -1024, y: -1024}
+        - {x: 1024, y: -1024}
+        - {x: 1024, y: 1024}
+    - name: simple-0_1
+      rect:
+        serializedVersion: 2
+        x: 2983
+        y: 4421
+        width: 1430
+        height: 1414
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -244.30267, y: 241.53467}
+        - {x: -244.30267, y: -241.46533}
+        - {x: 244.69733, y: -241.46533}
+        - {x: 244.69733, y: 241.53467}
     outline: []
   spritePackingTag: 
   userData: 

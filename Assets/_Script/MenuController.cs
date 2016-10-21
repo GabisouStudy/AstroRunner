@@ -18,6 +18,10 @@ public class MenuController : MonoBehaviour {
     [SerializeField]
     private SpriteRenderer spriteR;
     [SerializeField]
+    private AudioSource music;
+    [SerializeField]
+    private AudioSource explode;
+    [SerializeField]
     private GameObject player;
     [SerializeField]
     private RuntimeAnimatorController z;
@@ -40,6 +44,8 @@ public class MenuController : MonoBehaviour {
                 start.enabled = true;
                 player.GetComponent<Animator>().runtimeAnimatorController = z;
                 player.GetComponent<Player>().Jump();
+                music.enabled = false;
+                explode.enabled = true;
                 spriteR.sprite = sprite;
                 spriteR.sortingOrder = 1;
                 Destroy(this.gameObject);
