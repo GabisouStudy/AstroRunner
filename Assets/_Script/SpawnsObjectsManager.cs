@@ -30,7 +30,10 @@ public class SpawnsObjectsManager : MonoBehaviour {
         else
             Invoke("GeneratorOfMap", 2f);
 	}
-	
+	void Update()
+    {
+        transform.position = new Vector3(this.transform.position.x,height * 10,0);
+    }
 	void GenerateLateral ()
     {
         int i = Random.Range(-1, lateral.Length + 1);
@@ -55,7 +58,6 @@ public class SpawnsObjectsManager : MonoBehaviour {
     public void ChangeHeight(int h)
     {
         height += h;
-        transform.position += Vector3.up * height * 10;
     }
     void GeneratorOfMap()
     {
@@ -68,10 +70,12 @@ public class SpawnsObjectsManager : MonoBehaviour {
             {
                 gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height - 1);
             }
-            if (this.tag.Equals("up"))
+            else if (this.tag.Equals("up"))
             {
                 gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height + 1);
             }
+            else
+                gameObject.GetComponent<SpawnsObjectsManager>().ChangeHeight(height);
         }
         else
         {            

@@ -8,12 +8,15 @@ public class EnemysBehaviours : MonoBehaviour {
     Rigidbody2D rigidbody;
     private Transform player;
     public int rageAlert;
+    public int rageAlertY;
     public Sprite spriteAlert;
 
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = this.GetComponent<Rigidbody2D>();
         alert = false;
+        if (rageAlertY.Equals(0))
+            rageAlertY = 2;
 	}
 	
 	void Update () {
@@ -33,13 +36,16 @@ public class EnemysBehaviours : MonoBehaviour {
     {
         if(alert)
         {
-            rigidbody.velocity =-Vector2.right * 6;
+            if(rageAlert > 0)
+                rigidbody.velocity =-Vector2.right * 6;
+            else
+                rigidbody.velocity = Vector2.right * 6;
             this.GetComponent<SpriteRenderer>().sprite = spriteAlert;
         }
         else  
         {
  
-            if(this.transform.position.y + 2 > player.transform.position.y && this.transform.position.y - 2 < player.transform.position.y)
+            if(this.transform.position.y + rageAlertY > player.transform.position.y && this.transform.position.y - rageAlertY < player.transform.position.y)
                 if (this.transform.position.x < player.transform.position.x + rageAlert)
                 {
                     alert = true;
@@ -55,6 +61,7 @@ public class EnemysBehaviours : MonoBehaviour {
             if (collision.gameObject.tag != ("hatch") && alert || collision.gameObject.layer.Equals("Ground") && alert || collision.gameObject.tag.Equals("Player") && alert)
             {
                 this.GetComponent<SpriteRenderer>().enabled = false;
+                Invoke("Delete", 1);
             }
         if (collision.gameObject.tag.Equals("Player") && type.Equals("Rocket"))
         {
@@ -62,5 +69,9 @@ public class EnemysBehaviours : MonoBehaviour {
             this.GetComponent<AudioSource>().Play();
             collision.gameObject.GetComponent<Player>().dead = true;
         }  
+    }
+    void Delete()
+    {
+        Destroy(this.gameObject);
     }
 }
