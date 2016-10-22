@@ -18,7 +18,7 @@ public class MenuController : MonoBehaviour {
     [SerializeField]
     private SpriteRenderer spriteR;
     [SerializeField]
-    private AudioSource music;
+    private Animator music;
     [SerializeField]
     private AudioSource explode;
     [SerializeField]
@@ -38,18 +38,30 @@ public class MenuController : MonoBehaviour {
                 tut.SetActive(true);
                 g = 1;
             }
-            if (!InputMouse.tuto)
+            if (!InputMouse.tuto && g.Equals(1))
             {
-                gc.enabled = true;
-                start.enabled = true;
-                player.GetComponent<Animator>().runtimeAnimatorController = z;
-                player.GetComponent<Player>().Jump();
-                music.enabled = false;
+                music.enabled = true;
                 explode.enabled = true;
-                spriteR.sprite = sprite;
-                spriteR.sortingOrder = 1;
-                Destroy(this.gameObject);
+                Invoke("StartPlayer", 1f);
+                g = 2;
             }
         }
 	}
+
+
+    void StartPlayer()
+    {
+        gc.enabled = true;
+        start.enabled = true;
+        player.GetComponent<Player>().enabled = true;
+        player.GetComponent<Animator>().runtimeAnimatorController = z;
+        spriteR.sprite = sprite;
+        spriteR.sortingOrder = 1;
+        Invoke("Jump", 0.01f);
+    }
+    void Jump()
+    {
+        player.GetComponent<Player>().Jump();
+
+    }
 }
