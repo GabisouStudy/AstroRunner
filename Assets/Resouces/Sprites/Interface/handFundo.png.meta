@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: d888e9e4da01c2d4fbf7d604c28a49f2
+timeCreated: 1477328548
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: handFundo_0
+    21300002: handFundo_1
+    21300004: handFundo_2
+    21300006: handFundo_3
+    21300008: handFundo_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: handFundo_0
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 439
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.471436, y: 33.185715}
+        - {x: -15.528564, y: 33.185715}
+        - {x: -31.528564, y: 27.185715}
+        - {x: -31.528564, y: -16.814285}
+        - {x: -17.528564, y: -31.814285}
+        - {x: 19.471436, y: -31.814285}
+        - {x: 33.471436, y: -19.814285}
+        - {x: 33.471436, y: 19.185715}
+      - - {x: -11.528564, y: -8.814285}
+        - {x: -6.5285645, y: 20.185715}
+        - {x: 15.471436, y: 12.185715}
+        - {x: 10.471436, y: -10.814285}
+    - name: handFundo_1
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 439
+        width: 180
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.142822, y: 42.685715}
+        - {x: -41.142822, y: 37.685715}
+        - {x: -41.142822, y: -38.314285}
+        - {x: -34.142822, y: -41.314285}
+        - {x: 29.857178, y: -41.314285}
+        - {x: 42.857178, y: -39.314285}
+        - {x: 42.857178, y: 37.685715}
+        - {x: 39.857178, y: 42.685715}
+      - - {x: -21.142822, y: -7.3142853}
+        - {x: -10.142822, y: 18.685715}
+        - {x: 23.857178, y: 11.685715}
+        - {x: 10.857178, y: -21.314285}
+    - name: handFundo_2
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 420
+        width: 221
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.171387, y: 50.5}
+        - {x: -50.171387, y: 45.5}
+        - {x: -50.171387, y: -31.5}
+        - {x: -43.171387, y: -50.5}
+        - {x: 38.828613, y: -50.5}
+        - {x: 51.828613, y: -41.5}
+        - {x: 51.828613, y: 38.5}
+        - {x: 48.828613, y: 50.5}
+      - - {x: -29.171387, y: -17.5}
+        - {x: -18.171387, y: 26.5}
+        - {x: 33.828613, y: 16.5}
+        - {x: 15.828613, y: -34.5}
+    - name: handFundo_3
+      rect:
+        serializedVersion: 2
+        x: 3318
+        y: 400
+        width: 263
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.199951, y: 60.857147}
+        - {x: -60.19995, y: 31.857147}
+        - {x: -60.19995, y: -26.142853}
+        - {x: -35.19995, y: -50.142853}
+        - {x: -25.199951, y: -59.142853}
+        - {x: 50.80005, y: -59.142853}
+        - {x: 61.80005, y: -28.142853}
+        - {x: 61.80005, y: 46.857147}
+        - {x: 39.80005, y: 60.857147}
+      - - {x: -39.19995, y: -13.142853}
+        - {x: -14.199951, y: 39.857147}
+        - {x: 42.80005, y: 14.857147}
+        - {x: 20.800049, y: -39.142853}
+    - name: handFundo_4
+      rect:
+        serializedVersion: 2
+        x: 3940
+        y: 380
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57.857178, y: 69.71428}
+        - {x: -68.85718, y: 44.71428}
+        - {x: -68.85718, y: -68.28572}
+        - {x: 45.142822, y: -68.28572}
+        - {x: 69.14282, y: -63.28572}
+        - {x: 69.14282, y: 65.71428}
+        - {x: 60.142822, y: 69.71428}
+      - - {x: -14.857178, y: -43.28572}
+        - {x: -50.857178, y: -14.285721}
+        - {x: 14.142822, y: 46.71428}
+        - {x: 45.142822, y: -13.285721}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

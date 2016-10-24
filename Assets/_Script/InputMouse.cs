@@ -15,7 +15,19 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void Update() { 
         if (Input.anyKeyDown)
         {
-            tuto = false;
+            if (!menu)
+            {
+                tuto = false;
+            }
+            else
+            {
+                if (this.tag.Equals("EditorOnly"))
+                {
+                    this.gameObject.SetActive(false);
+                    menu = false;
+                    tuto = true;
+                }
+            }
         }
     }
     public bool GetShrink() { return shrink; }
