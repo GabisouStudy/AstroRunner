@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	public float maxJumpHeight = 4;
 	public float minJumpHeight = 1;
 	public float timeToJumpApex = .4f;
-	float accelerationTimeAirborne = .2f;
+    float accelerationTimeAirborne = .2f;
 	float accelerationTimeGrounded = .1f;
 	public float moveSpeed = 6;
     private Animator animator;
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour {
                     spriteRenderer.flipX = true;
                 else spriteRenderer.flipX = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump())
+            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump() ||  Input.GetAxisRaw("Vertical") > 0)
             {
                 Jump(wallSliding,wallDirX,int.Parse(input.x.ToString()));
 		    }

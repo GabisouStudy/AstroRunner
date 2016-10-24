@@ -8,16 +8,23 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private bool jump, shrink, up;
     public static bool tuto, menu;
 
-    void Start()
+    void Start() 
     {
         menu = true;
     }
-
+    void Update() { 
+        if (Input.anyKeyDown)
+        {
+            tuto = false;
+        }
+    }
     public bool GetShrink() { return shrink; }
     public bool GetJump() { return jump; }
     public void SetJump(bool j) { jump = j; }
-    public void OnPointerDown(PointerEventData eventData)
+
+    public void ExitTutorial()
     {
+
         if (!menu)
         {
             tuto = false;
@@ -30,7 +37,10 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             tuto = true;
             this.gameObject.SetActive(false);
         }
-            
+    }
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        ExitTutorial();
     }
     public void OnPointerUp(PointerEventData eventData)
     {
