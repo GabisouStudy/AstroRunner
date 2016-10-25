@@ -1,63 +1,63 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (Controller2D))]
-public class Player : MonoBehaviour {
+[RequireComponent(typeof(Controller2D))]
+public class Player : MonoBehaviour
+{
 
-	public float maxJumpHeight = 4;
-	public float minJumpHeight = 1;
-	public float timeToJumpApex = .4f;
+    private float maxJumpHeight = 2;
+    private float minJumpHeight = 1;
+    private float timeToJumpApex = .3f;
     float accelerationTimeAirborne = .2f;
-	float accelerationTimeGrounded = .1f;
-	public float moveSpeed = 6;
+    float accelerationTimeGrounded = .1f;
+    private float moveSpeed = 6;
     private Animator animator;
-    public Camera camera_;
-    public Sprite sprite_Jump;
-    public Sprite sprite_Dead;
-    public Sprite sprite_Croush;
-    public Sprite sprite_Swipe;
-    public Sprite sprite_Stop;
+    [SerializeField]
+    private Camera camera_;
+    [SerializeField]
+    private Sprite sprite_Jump, sprite_Dead, sprite_Croush, sprite_Swipe, sprite_Stop;
     private SpriteRenderer spriteRenderer;
-    public int direction;
-    public bool croushe;
-	public Vector2 wallJumpClimb;
-	public Vector2 wallJumpOff;
-	public Vector2 wallLeap;
-    public bool dead;
-    public bool decrease;
+    private int direction;
+    private bool croushe;
+    private Vector2 wallJumpClimb, wallJumpOff, wallLeap;
+    private bool dead;
+    private bool decrease;
 
-	public float wallSlideSpeedMax = 3;
-	public float wallStickTime = .25f;
-	float timeToWallUnstick;
-	float gravity;
-	float maxJumpVelocity;
-	float minJumpVelocity;
-	Vector3 velocity;
-	float velocityXSmoothing;
-	Controller2D controller;
-    public float limiteY;
-    public LayerMask layerMask;
-    public InputMouse InputMouse_Up;
-    public InputMouse InputMouse_Down;
+    private float wallSlideSpeedMax = 3;
+    private float wallStickTime = .25f;
+    float timeToWallUnstick;
+    float gravity;
+    float maxJumpVelocity;
+    float minJumpVelocity;
+    Vector3 velocity;
+    float velocityXSmoothing;
+    Controller2D controller;
+    private float limiteY = -100;
+    [SerializeField]
+    private LayerMask layerMask;
+    [SerializeField]
+    private InputMouse InputMouse_Up, InputMouse_Down;
+    [SerializeField]
+    private bool invertGravity;
     private int invert_gravity;
     void Start()
     {
-        if(invert_gravity.Equals(0))
-            invert_gravity = 1;
+        wallJumpClimb = new Vector2(5, 15);
+        wallJumpOff = new Vector2(5, 15);
+        wallLeap = new Vector2(3, 15);
         dead = false;
         croushe = false;
         decrease = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        controller = GetComponent<Controller2D> ();
+        controller = GetComponent<Controller2D>();
         animator = GetComponent<Animator>();
-        gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
-		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
-		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
+        gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
+        maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
+        minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
         direction = 1;
-    }
-    public void SetGravity(int gravitySet)
-    {
-        invert_gravity = gravitySet;
+
+        if (invert_gravity != 1 && invert_gravity != -1) invert_gravity = 1;
+
     }
     void Decrease()
     {
@@ -67,22 +67,29 @@ public class Player : MonoBehaviour {
     {
         Application.LoadLevel(Application.loadedLevel);
     }
+    public bool GetCroushe() { return croushe; }
+    public bool GetDead() { return dead; }
+    public void SetGravity(bool j) { invertGravity = j; }
+    public void SetDead(bool j) { dead = j; }
+    public float GetMoveSpeed() { return moveSpeed; }
+    public int GetDirection() { return direction; }
     void Update()
     {
-        if(invert_gravity.Equals(-1)) 
+        if (invertGravity)
         {
             if (!GetComponent<SpriteRenderer>().flipY)
-            { 
+            {
                 GetComponent<SpriteRenderer>().flipY = true;
+                invert_gravity = -1;
             }
+
         }
-        else if (invert_gravity.Equals(0))
-            invert_gravity = 1;
-        else if (GetComponent<SpriteRenderer>().flipY)
+        else if (!invertGravity && GetComponent<SpriteRenderer>().flipY)
         {
             GetComponent<SpriteRenderer>().flipY = false;
+            invert_gravity = 1;
         }
-        if(decrease)
+        if (decrease)
         {
             Vector2 input = new Vector2(0, 0);
             velocity.y -= 1;
@@ -92,7 +99,7 @@ public class Player : MonoBehaviour {
         if (dead && !decrease)
         {
             Invoke("Decrease", 0.2f);
-            Vector2 input = new Vector2(0,0);
+            Vector2 input = new Vector2(0, 0);
             velocity.y = wallLeap.y;
             this.GetComponent<Controller2D>().collisionMask = 0;
             velocity.x = 0;
@@ -101,8 +108,6 @@ public class Player : MonoBehaviour {
             if (animator.enabled) animator.enabled = false;
             spriteRenderer.sprite = sprite_Dead;
             camera_.transform.SetParent(null);
-
-
         }
         else if (!decrease && !InputMouse.menu && !InputMouse.tuto)
         {
@@ -114,70 +119,80 @@ public class Player : MonoBehaviour {
             else moveSpeed = 6;
             int wallDirX = (controller.collisions.left) ? -1 : 1;
 
-		    float targetVelocityX = input.x * moveSpeed;
-		    velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
+            float targetVelocityX = input.x * moveSpeed;
+            velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
 
-		    bool wallSliding = false;
-            if ((controller.collisions.left || controller.collisions.right)){
+            bool wallSliding = false;
+            if ((controller.collisions.left || controller.collisions.right))
+            {
                 moveSpeed = 0;
                 if (animator.enabled) animator.enabled = false;
 
             }
-		    if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && !controller.collisions.above) {
-             
-			    wallSliding = true;
-
-			    if (velocity.y < -wallSlideSpeedMax && invert_gravity.Equals(1)) {
-				    velocity.y = -wallSlideSpeedMax;
-			    }
-               //opa else if (velocity.y < -wallSlideSpeedMax && invert_gravity.Equals(1))
-     
-
-			    if (timeToWallUnstick > 0) {
-				    velocityXSmoothing = 0;
-				    velocity.x = 0;
-
-				    if (input.x != wallDirX && input.x != 0) {
-					    timeToWallUnstick -= Time.deltaTime;
-				    }
-				    else {
-					    timeToWallUnstick = wallStickTime;
-				    }
-			    }
-			    else {
-				    timeToWallUnstick = wallStickTime;
-			    }
-
-		    }
-            if(wallSliding)
+            if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && !controller.collisions.above)
             {
-                if(animator.enabled) animator.enabled = false;
+
+                wallSliding = true;
+
+                if (velocity.y < -wallSlideSpeedMax && invert_gravity.Equals(1))
+                {
+                    velocity.y = -wallSlideSpeedMax;
+                }
+                //opa else if (velocity.y < -wallSlideSpeedMax && invert_gravity.Equals(1))
+
+
+                if (timeToWallUnstick > 0)
+                {
+                    velocityXSmoothing = 0;
+                    velocity.x = 0;
+
+                    if (input.x != wallDirX && input.x != 0)
+                    {
+                        timeToWallUnstick -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        timeToWallUnstick = wallStickTime;
+                    }
+                }
+                else
+                {
+                    timeToWallUnstick = wallStickTime;
+                }
+
+            }
+            if (wallSliding)
+            {
+                if (animator.enabled) animator.enabled = false;
                 spriteRenderer.sprite = sprite_Swipe;
-                if(direction > 0)
+                if (direction > 0)
                     spriteRenderer.flipX = true;
                 else spriteRenderer.flipX = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump() ||  Input.GetAxisRaw("Vertical") > 0)
+            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump() || Input.GetAxisRaw("Vertical") > 0)
             {
-                Jump(wallSliding,wallDirX,int.Parse(input.x.ToString()));
-		    }
-
-		    velocity.y += gravity * invert_gravity * Time.deltaTime;
-		    controller.Move (velocity * Time.deltaTime, input);
-            
-            if (controller.collisions.above || controller.collisions.below) {
-			    velocity.y = 0;
+                Jump(wallSliding, wallDirX, int.Parse(input.x.ToString()));
             }
 
-      
-		    if (controller.collisions.below && invert_gravity.Equals(1) || controller.collisions.above && invert_gravity.Equals(-1)) {
-			    velocity.y = 0;
-               //velocity.y bug
+            velocity.y += gravity * invert_gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime, input);
+
+            if (controller.collisions.above || controller.collisions.below)
+            {
+                velocity.y = 0;
+            }
+
+
+            if (controller.collisions.below && invert_gravity.Equals(1) || controller.collisions.above && invert_gravity.Equals(-1))
+            {
+                velocity.y = 0;
+                //velocity.y bug
                 if (InputMouse_Down.GetShrink() || Input.GetAxisRaw("Vertical") < 0)
                 {
                     if (animator.enabled) animator.enabled = false;
                     spriteRenderer.sprite = sprite_Croush;
-                    if(invert_gravity.Equals(1)){
+                    if (invert_gravity.Equals(1))
+                    {
                         GetComponent<BoxCollider2D>().offset = new Vector2(0, -1f);
                         GetComponent<BoxCollider2D>().size = new Vector2(3.6f, 3f);
                     }
@@ -197,12 +212,12 @@ public class Player : MonoBehaviour {
                         croushe = false;
                         GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                         GetComponent<BoxCollider2D>().size = new Vector2(3.6f, 6.42f);
-                        
+
                         if (!animator.enabled) animator.enabled = true;
-                        
+
                     }
                     else Debug.Log(hit.collider.gameObject);
-        
+
                 }
                 else if (controller.collisions.above)
                 {
@@ -243,12 +258,12 @@ public class Player : MonoBehaviour {
             }
             else if (input == 0)
             {
-                velocity.x = -wallDirX * wallJumpOff.x ;
+                velocity.x = -wallDirX * wallJumpOff.x;
                 velocity.y = wallJumpOff.y * invert_gravity;
             }
             else
             {
-                velocity.x = -wallDirX * wallLeap.x ;
+                velocity.x = -wallDirX * wallLeap.x;
                 velocity.y = wallLeap.y * invert_gravity;
             }
         }
@@ -257,7 +272,8 @@ public class Player : MonoBehaviour {
         {
             velocity.y = maxJumpVelocity;
         }
-        else if(controller.collisions.above && invert_gravity.Equals(-1) && !croushe){
+        else if (controller.collisions.above && invert_gravity.Equals(-1) && !croushe)
+        {
             velocity.y = maxJumpVelocity * invert_gravity;
         }
     }

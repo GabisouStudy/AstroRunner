@@ -7,12 +7,12 @@ public class EnemyCollider : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            if (this.tag.Equals("bomb") && !collision.gameObject.GetComponent<Player>().dead)
+            if (this.tag.Equals("bomb") && !collision.gameObject.GetComponent<Player>().GetDead())
             {
                 this.GetComponent<AudioSource>().Play();
                 this.GetComponent<SpriteRenderer>().enabled = false;
             }
-            collision.gameObject.GetComponent<Player>().dead = true; 
+            collision.gameObject.GetComponent<Player>().SetDead(true); 
         }
     }
 }

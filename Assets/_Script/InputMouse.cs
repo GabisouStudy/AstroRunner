@@ -12,9 +12,11 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         menu = true;
     }
-    void Update() { 
-        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0))
-        {
+    void Update() 
+    { 
+
+       if (Input.anyKeyDown && !Input.GetMouseButtonDown(0))
+       {
             if (!menu)
             {
                 tuto = false;
@@ -33,6 +35,7 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool GetShrink() { return shrink; }
     public bool GetJump() { return jump; }
     public void SetJump(bool j) { jump = j; }
+    public void SetShrink(bool j) { shrink = j; }
 
     public void ExitTutorial()
     {

@@ -11,7 +11,6 @@ public class LaserBehaviour : MonoBehaviour
     private GameObject start;
     private GameObject middle;
     private GameObject end;
-
     [SerializeField]
     private int gravitySet;
 
@@ -52,10 +51,11 @@ public class LaserBehaviour : MonoBehaviour
             if (hit.collider.gameObject.tag == "Player")
             {
                 if(this.tag.Equals("Gravity"))
-                    hit.collider.gameObject.GetComponent<Player>().SetGravity(gravitySet);
+                   hit.collider.gameObject.GetComponent<Player>().SetGravity(true);
                 else
-                    hit.collider.gameObject.GetComponent<Player>().dead = true;
+                    hit.collider.gameObject.GetComponent<Player>().SetDead(true);
             }
+     
             currentLaserSize = Vector2.Distance(hit.point, this.transform.position);
 
             // -- Create the end sprite

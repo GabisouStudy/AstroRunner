@@ -3,15 +3,17 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-
-    public Text t_Score;
-    public Text t_Recorde;
-    public float score;
-    public float recorde;
-    public Player player;
+    [SerializeField]
+    private Text t_Score, t_Recorde;
+    private float score, recorde;
+    [SerializeField]
+    private Player player;
+    [SerializeField]
+    private bool controller_touch;
 
     void Start()
     {
+        controller_touch = true;
         score = 0;
         if (PlayerPrefs.HasKey("Record"))
         {
@@ -28,12 +30,15 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (player.moveSpeed > 0 && !player.dead && player.direction > 0 && !InputMouse.menu && !InputMouse.tuto)
+        if(controller_touch) {
+        }
+        else
+        if (player.GetMoveSpeed() > 0 && !player.GetDead() && player.GetDirection() > 0 && !InputMouse.menu && !InputMouse.tuto)
         {
             score += 5 * Time.deltaTime;
             t_Score.text = "" + Mathf.Floor(score);
         }
-        if (player.dead)
+        if (player.GetDead())
         {
             if(PlayerPrefs.GetFloat("Record") < score)
             {

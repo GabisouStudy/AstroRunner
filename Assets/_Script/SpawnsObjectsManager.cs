@@ -61,7 +61,7 @@ public class SpawnsObjectsManager : MonoBehaviour {
     }
     void GeneratorOfMap()
     {
-        if (player.moveSpeed > 0 && player.direction > 0)
+        if (player.GetMoveSpeed() > 0 && player.GetDirection() > 0)
         {
             int i = Random.Range(0, goods.Length);
             if (canRepeat && i.Equals(0)) i = Random.Range(0, goods.Length);

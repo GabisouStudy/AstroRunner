@@ -18,12 +18,12 @@ public class Controller2D : RaycastController {
 	}
     void Update() 
     {
-        if(player.croushe && !adjustedRay)  
+        if(player.GetCroushe() && !adjustedRay)  
         {
             base.Start();
             adjustedRay = true;
         }
-        else if (!player.croushe)
+        else if (!player.GetCroushe())
         {
             if (adjustedRay) base.Start();
             adjustedRay = false;

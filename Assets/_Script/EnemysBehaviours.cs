@@ -67,7 +67,7 @@ public class EnemysBehaviours : MonoBehaviour {
         {
             this.GetComponent<AudioSource>().Stop();
             this.GetComponent<AudioSource>().Play();
-            collision.gameObject.GetComponent<Player>().dead = true;
+            collision.gameObject.GetComponent<Player>().SetDead(true); 
         }  
     }
     void Delete()
