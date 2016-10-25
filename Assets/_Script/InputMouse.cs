@@ -39,7 +39,6 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void ExitTutorial()
     {
-
         if (!menu)
         {
             tuto = false;

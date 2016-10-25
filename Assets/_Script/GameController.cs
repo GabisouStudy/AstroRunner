@@ -9,11 +9,11 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Player player;
     [SerializeField]
-    private bool controller_touch;
+    private GameObject AudioGame;
+
 
     void Start()
     {
-        controller_touch = true;
         score = 0;
         if (PlayerPrefs.HasKey("Record"))
         {
@@ -27,12 +27,13 @@ public class GameController : MonoBehaviour
         t_Recorde.text = "" + Mathf.Floor(recorde);
 
     }
-
+    void Actived_AudioGame()
+    {
+        AudioGame.SetActive(true);
+    }
     void Update()
     {
-        if(controller_touch) {
-        }
-        else
+        if (!InputMouse.tuto && !InputMouse.menu && !AudioGame.activeSelf) Invoke("Actived_AudioGame", 4.4f);
         if (player.GetMoveSpeed() > 0 && !player.GetDead() && player.GetDirection() > 0 && !InputMouse.menu && !InputMouse.tuto)
         {
             score += 5 * Time.deltaTime;

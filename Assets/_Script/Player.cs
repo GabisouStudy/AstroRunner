@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool invertGravity;
     private int invert_gravity;
+    [SerializeField]
+    private int money;
     void Start()
     {
         wallJumpClimb = new Vector2(5, 15);
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour
     public bool GetCroushe() { return croushe; }
     public bool GetDead() { return dead; }
     public void SetGravity(bool j) { invertGravity = j; }
+    public void SetMoney(int j) { money += j; }
     public void SetDead(bool j) { dead = j; }
     public float GetMoveSpeed() { return moveSpeed; }
     public int GetDirection() { return direction; }
@@ -111,7 +114,7 @@ public class Player : MonoBehaviour
         }
         else if (!decrease && !InputMouse.menu && !InputMouse.tuto)
         {
-            if (this.transform.position.y < limiteY) dead = true;
+            if (this.transform.position.y < limiteY || this.transform.position.y >50) dead = true;
             Vector2 input = new Vector2(direction, Input.GetAxisRaw("Vertical"));
             if (direction.Equals(1)) spriteRenderer.flipX = false;
             else spriteRenderer.flipX = true;
@@ -134,12 +137,16 @@ public class Player : MonoBehaviour
 
                 wallSliding = true;
 
-                if (velocity.y < -wallSlideSpeedMax && invert_gravity.Equals(1))
+                if (velocity.y < -wallSlideSpeedMax && !invertGravity)
                 {
-                    velocity.y = -wallSlideSpeedMax;
+                   velocity.y = -wallSlideSpeedMax;
+                  
                 }
-                //opa else if (velocity.y < -wallSlideSpeedMax && invert_gravity.Equals(1))
 
+                else if (velocity.y > wallSlideSpeedMax && invertGravity)
+                {
+                    velocity.y = wallSlideSpeedMax;
+                }
 
                 if (timeToWallUnstick > 0)
                 {
