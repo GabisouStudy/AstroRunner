@@ -13,7 +13,7 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         menu = true;
     }
     void Update() { 
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && !Input.GetMouseButtonDown(0))
         {
             if (!menu)
             {

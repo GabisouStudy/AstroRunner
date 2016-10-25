@@ -12,6 +12,9 @@ public class LaserBehaviour : MonoBehaviour
     private GameObject middle;
     private GameObject end;
 
+    [SerializeField]
+    private int gravitySet;
+
     void Update()
     {
         // Create the laser start from the prefab
@@ -47,7 +50,12 @@ public class LaserBehaviour : MonoBehaviour
 
             // -- Get the laser length
             if (hit.collider.gameObject.tag == "Player")
-                hit.collider.gameObject.GetComponent<Player>().dead = true;
+            {
+                if(this.tag.Equals("Gravity"))
+                    hit.collider.gameObject.GetComponent<Player>().SetGravity(gravitySet);
+                else
+                    hit.collider.gameObject.GetComponent<Player>().dead = true;
+            }
             currentLaserSize = Vector2.Distance(hit.point, this.transform.position);
 
             // -- Create the end sprite

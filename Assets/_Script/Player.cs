@@ -39,9 +39,11 @@ public class Player : MonoBehaviour {
     public LayerMask layerMask;
     public InputMouse InputMouse_Up;
     public InputMouse InputMouse_Down;
-    public int invert_gravity;
+    private int invert_gravity;
     void Start()
     {
+        if(invert_gravity.Equals(0))
+            invert_gravity = 1;
         dead = false;
         croushe = false;
         decrease = false;
@@ -52,8 +54,10 @@ public class Player : MonoBehaviour {
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
         direction = 1;
-        
-
+    }
+    public void SetGravity(int gravitySet)
+    {
+        invert_gravity = gravitySet;
     }
     void Decrease()
     {
@@ -72,6 +76,8 @@ public class Player : MonoBehaviour {
                 GetComponent<SpriteRenderer>().flipY = true;
             }
         }
+        else if (invert_gravity.Equals(0))
+            invert_gravity = 1;
         else if (GetComponent<SpriteRenderer>().flipY)
         {
             GetComponent<SpriteRenderer>().flipY = false;
