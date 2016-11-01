@@ -49,7 +49,7 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             menu = false;
             tuto = true;
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
         }
     }
     public void OnPointerDown(PointerEventData eventData)
