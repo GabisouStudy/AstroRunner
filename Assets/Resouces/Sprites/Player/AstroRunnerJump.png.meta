@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bb1e8adaeba8bfa45a5dddd85e9d0f34
-timeCreated: 1475679474
+timeCreated: 1479823765
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -45,7 +45,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 5
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -54,79 +54,14 @@ TextureImporter:
     - name: AstroRunnerJump_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 160
-        width: 419
-        height: 680
+        x: 9
+        y: 8
+        width: 21
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -46.5, y: -266}
-        - {x: -6.5, y: -222}
-        - {x: 7.5, y: -182}
-        - {x: 7.5, y: -240}
-        - {x: 9.5, y: -242}
-        - {x: 27.5, y: -242}
-        - {x: 27.5, y: -320}
-        - {x: 47.5, y: -340}
-        - {x: 131.5, y: -340}
-        - {x: 131.5, y: -322}
-        - {x: 169.5, y: -322}
-        - {x: 191.5, y: -300}
-        - {x: 191.5, y: -240}
-        - {x: 169.5, y: -218}
-        - {x: 131.5, y: -218}
-        - {x: 131.5, y: -180}
-        - {x: 129.5, y: -178}
-        - {x: 111.5, y: -178}
-        - {x: 111.5, y: -140}
-        - {x: 109.5, y: -138}
-        - {x: 91.5, y: -138}
-        - {x: 132.5, y: -43}
-        - {x: 135.5, y: -25}
-        - {x: 153.5, y: -21}
-        - {x: 171.5, y: 0}
-        - {x: 209.5, y: 38}
-        - {x: 209.5, y: 142}
-        - {x: 189.5, y: 162}
-        - {x: 171.5, y: 162}
-        - {x: 171.5, y: 239}
-        - {x: 169.5, y: 241}
-        - {x: 151.5, y: 241}
-        - {x: 151.5, y: 279}
-        - {x: 129.5, y: 301}
-        - {x: 114.5, y: 321}
-        - {x: 78.5, y: 340}
-        - {x: -32.5, y: 340}
-        - {x: -32.5, y: 321}
-        - {x: -71.5, y: 323}
-        - {x: -94.5, y: 300}
-        - {x: -112.5, y: 284}
-        - {x: -135.5, y: 240}
-        - {x: -132.5, y: 201}
-        - {x: -170.5, y: 201}
-        - {x: -172.5, y: 199}
-        - {x: -190.5, y: 182}
-        - {x: -192.5, y: 180}
-        - {x: -192.5, y: 40}
-        - {x: -190.5, y: 38}
-        - {x: -172.5, y: 38}
-        - {x: -172.5, y: 0}
-        - {x: -110.5, y: -62}
-        - {x: -92.5, y: -62}
-        - {x: -112.5, y: -140}
-        - {x: -130.5, y: -178}
-        - {x: -170.5, y: -178}
-        - {x: -172.5, y: -180}
-        - {x: -191.5, y: -196}
-        - {x: -209.5, y: -214}
-        - {x: -209.5, y: -322}
-        - {x: -192.5, y: -340}
-        - {x: -128.5, y: -340}
-        - {x: -108.5, y: -320}
-        - {x: -108.5, y: -282}
-        - {x: -70.5, y: -282}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 
