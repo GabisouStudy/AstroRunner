@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5057c8828bb257049b6225cec171263b
-timeCreated: 1475766348
+timeCreated: 1480091814
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -45,7 +45,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 25
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -54,43 +54,14 @@ TextureImporter:
     - name: laser_shooter_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 240
-        height: 440
+        x: 2
+        y: 2
+        width: 12
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 19, y: 220}
-        - {x: 19, y: 202}
-        - {x: 1, y: 202}
-        - {x: -1, y: 200}
-        - {x: -1, y: 141}
-        - {x: -59, y: 141}
-        - {x: -61, y: 139}
-        - {x: -61, y: 121}
-        - {x: -80, y: 121}
-        - {x: -102, y: 99}
-        - {x: -102, y: 81}
-        - {x: -120, y: 81}
-        - {x: -120, y: -82}
-        - {x: -102, y: -82}
-        - {x: -102, y: -100}
-        - {x: -100, y: -102}
-        - {x: -82, y: -102}
-        - {x: -82, y: -120}
-        - {x: -80, y: -122}
-        - {x: -61, y: -122}
-        - {x: -61, y: -140}
-        - {x: -59, y: -142}
-        - {x: -1, y: -142}
-        - {x: -1, y: -200}
-        - {x: 1, y: -202}
-        - {x: 19, y: -202}
-        - {x: 19, y: -220}
-        - {x: 120, y: -220}
-        - {x: 120, y: 220}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

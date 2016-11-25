@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0692130b77e8cf24381abbf46bd8e829
-timeCreated: 1475766174
+timeCreated: 1480093109
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -45,7 +45,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 25
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -54,49 +54,14 @@ TextureImporter:
     - name: rocket-no_fire_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 460
-        height: 360
+        x: 2
+        y: 2
+        width: 23
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 196, y: -65}
-        - {x: 214, y: -61}
-        - {x: 212, y: -42}
-        - {x: 230, y: -42}
-        - {x: 230, y: 45}
-        - {x: 174, y: 96}
-        - {x: 190, y: 97}
-        - {x: 192, y: 99}
-        - {x: 192, y: 180}
-        - {x: 88, y: 180}
-        - {x: 68, y: 160}
-        - {x: 68, y: 142}
-        - {x: 49, y: 144}
-        - {x: 26, y: 120}
-        - {x: 28, y: 101}
-        - {x: -149, y: 101}
-        - {x: -171, y: 79}
-        - {x: -171, y: 61}
-        - {x: -190, y: 61}
-        - {x: -212, y: 39}
-        - {x: -212, y: 21}
-        - {x: -230, y: 21}
-        - {x: -230, y: -22}
-        - {x: -190, y: -62}
-        - {x: -169, y: -82}
-        - {x: -149, y: -102}
-        - {x: 27, y: -123}
-        - {x: 46, y: -142}
-        - {x: 70, y: -162}
-        - {x: 88, y: -162}
-        - {x: 88, y: -180}
-        - {x: 192, y: -180}
-        - {x: 194, y: -99}
-        - {x: 174, y: -83}
-        - {x: 191, y: -84}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 
