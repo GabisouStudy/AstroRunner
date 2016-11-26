@@ -72,7 +72,10 @@ public class Player : MonoBehaviour
     public bool GetCroushe() { return croushe; }
     public bool GetDead() { return dead; }
     public void SetGravity(bool j) { invertGravity = j; }
-    public void SetMoney(int j) { money += j; }
+    public void SetMoney(int j)
+    {
+        money += j;
+    }
     public void SetDead(bool j) { dead = j; }
     public float GetMoveSpeed() { return moveSpeed; }
     public int GetDirection() { return direction; }
@@ -105,6 +108,7 @@ public class Player : MonoBehaviour
             Vector2 input = new Vector2(0, 0);
             velocity.y = wallLeap.y;
             this.GetComponent<Controller2D>().collisionMask = 0;
+            this.GetComponent<BoxCollider2D>().enabled = false;
             velocity.x = 0;
             velocity.y += gravity * invert_gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime, input);
@@ -223,7 +227,7 @@ public class Player : MonoBehaviour
                         if (!animator.enabled) animator.enabled = true;
 
                     }
-                    else Debug.Log(hit.collider.gameObject);
+                    //else Debug.Log(hit.collider.gameObject);
 
                 }
                 else if (controller.collisions.above)
@@ -239,7 +243,7 @@ public class Player : MonoBehaviour
                         if (!animator.enabled) animator.enabled = true;
 
                     }
-                    else Debug.Log(hit.collider.gameObject);
+                    //else Debug.Log(hit.collider.gameObject);
 
                 }
             }
