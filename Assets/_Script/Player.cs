@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     public int GetDirection() { return direction; }
     void Update()
     {
-        Debug.Log(money);
+   
         if (invertGravity)
         {
             if (!GetComponent<SpriteRenderer>().flipY)

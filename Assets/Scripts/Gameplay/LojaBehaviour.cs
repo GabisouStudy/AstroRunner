@@ -25,7 +25,7 @@ public class LojaBehaviour : MonoBehaviour {
     }
     void InicializeEncryotion()
     {
-        if (!!isEncriptionInitialized)
+        if (!isEncriptionInitialized)
         {
             if (!PlayerPrefs.HasKey("ws_id"))
             {
@@ -36,14 +36,18 @@ public class LojaBehaviour : MonoBehaviour {
     }
     void Start()
     {
-        player.SetMoney(10000);
-        Debug.Log("Set Money Teste");
+        
+      
       
         if (ZPlayerPrefs.HasKey("ws_myUpgrades"))
-            myUpgrades = PlayerPrefs.GetString("ws_myUpgrades");
+            myUpgrades = ZPlayerPrefs.GetString("ws_myUpgrades");
 
         if (ZPlayerPrefs.HasKey("ws_money"))
-            player.SetMoney(PlayerPrefs.GetInt("ws_money"));
+            player.SetMoney(ZPlayerPrefs.GetInt("ws_money"));
+        else
+        {
+            player.SetMoney(10000); Debug.Log("Set Money Teste");
+        }
 
 
         string[] acquiredUp;
@@ -74,17 +78,18 @@ public class LojaBehaviour : MonoBehaviour {
             }
         }
 
-     
-		moneyState.text = player.GetMoney().ToString ();
 
 	}
 	
   
 
     public void Scene (string scene) {
-        SceneManager.LoadScene(scene);
-	}
-
+        SceneManager.LoadScene(scene);;
+    }
+    void Update ()
+    {
+        moneyState.text = player.GetMoney().ToString();
+    }
 
     public void SumCoin(int value)
 	{
