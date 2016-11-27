@@ -15,9 +15,9 @@ public class GameController : MonoBehaviour
     void Start()
     {
         score = 0;
-        if (PlayerPrefs.HasKey("Record"))
+        if (ZPlayerPrefs.HasKey("Record"))
         {
-            recorde = PlayerPrefs.GetFloat("Record");
+            recorde = ZPlayerPrefs.GetFloat("Record");
         }
 
         else
@@ -41,9 +41,9 @@ public class GameController : MonoBehaviour
         }
         if (player.GetDead())
         {
-            if(PlayerPrefs.GetFloat("Record") < score)
+            if(ZPlayerPrefs.GetFloat("Record") < score)
             {
-                PlayerPrefs.SetFloat("Record", score);
+                ZPlayerPrefs.SetFloat("Record", score);
             }
 
         }

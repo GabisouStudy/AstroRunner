@@ -41,12 +41,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool invertGravity;
     private int invert_gravity;
-    [SerializeField]
-    private int money;
+
+    private float money;
     [SerializeField]
     private Image[] Botoes;
     void Start()
     {
+     
         Botoes[0].enabled = true;
         Botoes[1].enabled = true;
         wallJumpClimb = new Vector2(5, 15);
@@ -70,7 +71,18 @@ public class Player : MonoBehaviour
     {
         decrease = true;
     }
-    
+    public float GetMoney()
+    {
+        return money;
+    }
+    public float SetMoney(float f)
+    {
+        return money = f;
+    }
+    public float AddMoney(float f)
+    {
+        return money += f;
+    }
     void GameOver()
     {
         Application.LoadLevel(Application.loadedLevel);
@@ -87,6 +99,7 @@ public class Player : MonoBehaviour
     public int GetDirection() { return direction; }
     void Update()
     {
+        Debug.Log(money);
         if (invertGravity)
         {
             if (!GetComponent<SpriteRenderer>().flipY)
