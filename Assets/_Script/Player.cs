@@ -134,6 +134,7 @@ public class Player : MonoBehaviour
             if (animator.enabled) animator.enabled = false;
             spriteRenderer.sprite = sprite_Dead;
             camera_.transform.SetParent(null);
+            ZPlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
         }
         else if (!decrease && !InputMouse.menu && !InputMouse.tuto)
         {
