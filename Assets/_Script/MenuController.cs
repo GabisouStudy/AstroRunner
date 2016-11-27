@@ -27,6 +27,9 @@ public class MenuController : MonoBehaviour {
     private RuntimeAnimatorController z;
     private int g = 0;
 
+	void Start(){
+		AdsController.Init();
+	}
 
 	void Update () {
         if (!InputMouse.menu)
