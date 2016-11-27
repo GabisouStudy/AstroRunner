@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent(typeof(Controller2D))]
@@ -42,8 +43,12 @@ public class Player : MonoBehaviour
     private int invert_gravity;
     [SerializeField]
     private int money;
+    [SerializeField]
+    private Image[] Botoes;
     void Start()
     {
+        Botoes[0].enabled = true;
+        Botoes[1].enabled = true;
         wallJumpClimb = new Vector2(5, 15);
         wallJumpOff = new Vector2(5, 15);
         wallLeap = new Vector2(3, 15);
@@ -65,6 +70,7 @@ public class Player : MonoBehaviour
     {
         decrease = true;
     }
+    
     void GameOver()
     {
         Application.LoadLevel(Application.loadedLevel);
