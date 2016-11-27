@@ -17,6 +17,7 @@ public class LojaBehaviour : MonoBehaviour {
     private string upgrade;
     public Player player;
     private bool isEncriptionInitialized;
+    int textsSkin;
 
     void Awake()
     {
@@ -36,8 +37,7 @@ public class LojaBehaviour : MonoBehaviour {
     }
     void Start()
     {
-        
-      
+             
       
         if (ZPlayerPrefs.HasKey("ws_myUpgrades"))
             myUpgrades = ZPlayerPrefs.GetString("ws_myUpgrades");
@@ -56,7 +56,6 @@ public class LojaBehaviour : MonoBehaviour {
         {
             if (verify.Equals("Hunter"))
             {
-               
                 if (ZPlayerPrefs.GetString("ws_activedperso") == verify)
                 {
                      myPerson.sprite = person[1];
@@ -66,8 +65,6 @@ public class LojaBehaviour : MonoBehaviour {
             }
             else  if (verify.Equals("Hippie"))
             {
-               
-
                 if (ZPlayerPrefs.GetString("ws_activedperso") == verify)
                 {
                     myPerson.sprite = person[3];
@@ -77,7 +74,6 @@ public class LojaBehaviour : MonoBehaviour {
 
             }
         }
-
 
 	}
 	
@@ -89,6 +85,11 @@ public class LojaBehaviour : MonoBehaviour {
     void Update ()
     {
         moneyState.text = player.GetMoney().ToString();
+   
+        if (activedperso != null && activedperso.Equals ("Hunter") && textsSkin != 0) textsSkin = 0;
+        else if (activedperso != null && activedperso.Equals("Hippie") && textsSkin != 1) textsSkin = 1;
+     
+
     }
 
     public void SumCoin(int value)
@@ -134,6 +135,7 @@ public class LojaBehaviour : MonoBehaviour {
                 text.text = upgrade + " Acquired";
                 DesactivePerson();
                 ZPlayerPrefs.SetString("ws_activedperso", "");
+
             }
             else
             {
@@ -150,6 +152,7 @@ public class LojaBehaviour : MonoBehaviour {
 	}
     void ActiveUpgrade(Text text)
     {
+        if (activedperso != upgrade) texts[textsSkin].text = activedperso + " Acquired";
         text.text = upgrade + " Ative";
         if (upgrade.Equals("Hunter"))
         {
@@ -169,8 +172,9 @@ public class LojaBehaviour : MonoBehaviour {
             activedperso = upgrade;
             myPerson.sprite = person[3];
             ZPlayerPrefs.SetString("ws_activedperso", activedperso);
-
         }
+
+ 
     }
     void DesactivePerson()
     {
