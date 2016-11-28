@@ -10,14 +10,15 @@ public class LojaBehaviour : MonoBehaviour {
     public Sprite[] person;
     public Text[] texts;
     public GameObject menu;
-    private string myUpgrades;
+    private string mySkins;
     private string activedperso;
-    public Sprite[] spites = new Sprite[2];
     private float value;
-    private string upgrade;
+    private string skinSelected;
     public Player player;
     private bool isEncriptionInitialized;
     int textsSkin;
+    [SerializeField]
+    private int[] valuesSkins;
 
     void Awake()
     {
@@ -43,9 +44,13 @@ public class LojaBehaviour : MonoBehaviour {
     {
         if (PlayerPrefs.HasKey("ws_activedperso"))
             activedperso = PlayerPrefs.GetString("ws_activedperso");
+        else
+            activedperso = null;
 
         if (ZPlayerPrefs.HasKey("ws_myUpgrades"))
-            myUpgrades = ZPlayerPrefs.GetString("ws_myUpgrades");
+            mySkins = ZPlayerPrefs.GetString("ws_myUpgrades");
+        else
+            mySkins = null;
 
         if (ZPlayerPrefs.HasKey("ws_money"))
             player.SetMoney(ZPlayerPrefs.GetInt("ws_money"));
@@ -57,24 +62,29 @@ public class LojaBehaviour : MonoBehaviour {
         acquiredUp = ZPlayerPrefs.GetString("ws_myUpgrades").Split('|');
         foreach (string verify in acquiredUp)
         {
-            if (verify.Equals("Hunter"))
+            if (verify.Equals("0"))
             {
                 if (PlayerPrefs.GetString("ws_activedperso") == verify)
                 {
                      myPerson.sprite = person[1];
-                    texts[0].text = verify + " Ative";
+                    texts[0].text = "Ative";
                 }
-                else texts[0].text = verify + " Acquired";
+                else texts[0].text = "Acquired";
             }
-            else  if (verify.Equals("Hippie"))
+            else  if (verify.Equals("2"))
             {
+                texts[0].text = valuesSkins[0].ToString();
                 if (PlayerPrefs.GetString("ws_activedperso") == verify)
                 {
                     myPerson.sprite = person[3];
-                    texts[1].text = verify + " Ative";
+                    texts[1].text = "Ative";
                 }
-                else texts[1].text = verify + " Acquired";
-
+                else texts[1].text = "Acquired";
+            }
+            else
+            {
+                texts[0].text = valuesSkins[0].ToString();
+                texts[1].text = valuesSkins[1].ToString();
             }
         }
 	}
@@ -82,14 +92,14 @@ public class LojaBehaviour : MonoBehaviour {
   
 
     public void Scene (string scene) {
-        SceneManager.LoadScene(scene);;
+        SceneManager.LoadScene(scene);
     }
     void Update ()
     {
         moneyState.text = player.GetMoney().ToString();
    
-        if (activedperso != null && activedperso.Equals ("Hunter") && textsSkin != 0) textsSkin = 0;
-        else if (activedperso != null && activedperso.Equals("Hippie") && textsSkin != 1) textsSkin = 1;
+        if (activedperso != null && activedperso.Equals ("0") && textsSkin != 0) textsSkin = 0;
+        else if (activedperso != null && activedperso.Equals("2") && textsSkin != 2) textsSkin = 2;
 
     }
 
@@ -116,19 +126,19 @@ public class LojaBehaviour : MonoBehaviour {
     }
     public void SetUpgrade(string upgrades)
     {
-        upgrade = upgrades;
+        skinSelected = upgrades;
     }
 	public void BuyAndSelect(GameObject texts)
     {
         Text text = texts.GetComponent<Text>();
 		bool iHave = false;
-        if (myUpgrades != null && myUpgrades != "")
+        if (mySkins != null && mySkins != "")
         {
             string[] acquiredUp;
-            acquiredUp = myUpgrades.Split('|');
+            acquiredUp = mySkins.Split('|');
             foreach (string verify in acquiredUp)
             {
-                if (verify.Equals(upgrade))
+                if (verify.Equals(skinSelected))
                 {
                     iHave = true;
                 }
@@ -136,12 +146,11 @@ public class LojaBehaviour : MonoBehaviour {
         }
         if (iHave)
         {
-            if (text.text.Equals(upgrade + " Ative") && upgrade != "Hell")
+            if (text.text.Equals("Ative"))
             {
-                text.text = upgrade + " Acquired";
+                text.text = "Acquired";
                 DesactivePerson();
                 PlayerPrefs.SetString("ws_activedperso", "");
-
             }
             else
             {
@@ -150,39 +159,40 @@ public class LojaBehaviour : MonoBehaviour {
         }
         else if (player.GetMoney() >= value)
         {
-            myUpgrades += "|" + upgrade;
+            mySkins += "|" + skinSelected;
             ActiveUpgrade(text);
             SumCoin(int.Parse((value * -1).ToString()));
-            ZPlayerPrefs.SetString("ws_myUpgrades", myUpgrades);
+            ZPlayerPrefs.SetString("ws_myUpgrades", mySkins);
             Debug.Log("oi");
         }
 	}
     void ActiveUpgrade(Text text)
     {
-        if (activedperso != upgrade) texts[textsSkin].text = activedperso + " Acquired";
-        text.text = upgrade + " Ative";
-        if (upgrade.Equals("Hunter"))
+        if (activedperso != skinSelected && texts[textsSkin].text.Equals("Ative")) texts[textsSkin].text =  "Acquired";
+        text.text = "Ative";
+        if (skinSelected.Equals("0"))
         {
             myPerson.sprite = person[1];
-            activedperso = upgrade;
+            activedperso = skinSelected;
             Debug.Log("oi1");
             PlayerPrefs.SetString("ws_activedperso", activedperso);
 
         }
-        if (upgrade.Equals("Mage"))
+        if (skinSelected.Equals("1"))
         {
+            activedperso = skinSelected;
             myPerson.sprite = person[2];
-            activedperso = upgrade;
-            PlayerPrefs.SetString("ws_activedperso", activedperso);
-            Debug.Log("oi2");
-        }
-        if (upgrade.Equals("Hippie"))
-        {
-            activedperso = upgrade;
-            myPerson.sprite = person[3];
             PlayerPrefs.SetString("ws_activedperso", activedperso);
             Debug.Log("oi3");
         }
+        if (skinSelected.Equals("2"))
+        {
+            myPerson.sprite = person[3];
+            activedperso = skinSelected;
+            PlayerPrefs.SetString("ws_activedperso", activedperso);
+            Debug.Log("oi2");
+        }
+       
 
  
     }
