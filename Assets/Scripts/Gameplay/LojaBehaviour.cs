@@ -148,6 +148,7 @@ public class LojaBehaviour : MonoBehaviour {
             ActiveUpgrade(text);
             SumCoin(int.Parse((value * -1).ToString()));
             ZPlayerPrefs.SetString("ws_myUpgrades", myUpgrades);
+            Debug.Log("oi");
         }
 	}
     void ActiveUpgrade(Text text)
@@ -158,6 +159,7 @@ public class LojaBehaviour : MonoBehaviour {
         {
             myPerson.sprite = person[1];
             activedperso = upgrade;
+            Debug.Log("oi1");
             ZPlayerPrefs.SetString("ws_activedperso", activedperso);
 
         }
@@ -166,12 +168,14 @@ public class LojaBehaviour : MonoBehaviour {
             myPerson.sprite = person[2];
             activedperso = upgrade;
             ZPlayerPrefs.SetString("ws_activedperso", activedperso);
+            Debug.Log("oi2");
         }
         if (upgrade.Equals("Hippie"))
         {
             activedperso = upgrade;
             myPerson.sprite = person[3];
             ZPlayerPrefs.SetString("ws_activedperso", activedperso);
+            Debug.Log("oi3");
         }
 
  
