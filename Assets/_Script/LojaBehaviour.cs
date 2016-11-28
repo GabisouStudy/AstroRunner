@@ -37,8 +37,13 @@ public class LojaBehaviour : MonoBehaviour {
     }
     void Start()
     {
-             
-      
+        GetDada();
+    }
+    void GetDada()
+    {
+        if (PlayerPrefs.HasKey("ws_activedperso"))
+            activedperso = PlayerPrefs.GetString("ws_activedperso");
+
         if (ZPlayerPrefs.HasKey("ws_myUpgrades"))
             myUpgrades = ZPlayerPrefs.GetString("ws_myUpgrades");
 
@@ -48,15 +53,13 @@ public class LojaBehaviour : MonoBehaviour {
         {
             player.SetMoney(10000); Debug.Log("Set Money Teste");
         }
-
-
         string[] acquiredUp;
         acquiredUp = ZPlayerPrefs.GetString("ws_myUpgrades").Split('|');
         foreach (string verify in acquiredUp)
         {
             if (verify.Equals("Hunter"))
             {
-                if (ZPlayerPrefs.GetString("ws_activedperso") == verify)
+                if (PlayerPrefs.GetString("ws_activedperso") == verify)
                 {
                      myPerson.sprite = person[1];
                     texts[0].text = verify + " Ative";
@@ -65,7 +68,7 @@ public class LojaBehaviour : MonoBehaviour {
             }
             else  if (verify.Equals("Hippie"))
             {
-                if (ZPlayerPrefs.GetString("ws_activedperso") == verify)
+                if (PlayerPrefs.GetString("ws_activedperso") == verify)
                 {
                     myPerson.sprite = person[3];
                     texts[1].text = verify + " Ative";
@@ -74,7 +77,6 @@ public class LojaBehaviour : MonoBehaviour {
 
             }
         }
-
 	}
 	
   
@@ -88,10 +90,14 @@ public class LojaBehaviour : MonoBehaviour {
    
         if (activedperso != null && activedperso.Equals ("Hunter") && textsSkin != 0) textsSkin = 0;
         else if (activedperso != null && activedperso.Equals("Hippie") && textsSkin != 1) textsSkin = 1;
-     
 
     }
 
+    public void ResetarDados()
+    {
+        PlayerPrefs.DeleteAll();
+        GetDada();
+    }
     public void SumCoin(int value)
 	{
         player.AddMoney(value);
@@ -134,7 +140,7 @@ public class LojaBehaviour : MonoBehaviour {
             {
                 text.text = upgrade + " Acquired";
                 DesactivePerson();
-                ZPlayerPrefs.SetString("ws_activedperso", "");
+                PlayerPrefs.SetString("ws_activedperso", "");
 
             }
             else
@@ -160,21 +166,21 @@ public class LojaBehaviour : MonoBehaviour {
             myPerson.sprite = person[1];
             activedperso = upgrade;
             Debug.Log("oi1");
-            ZPlayerPrefs.SetString("ws_activedperso", activedperso);
+            PlayerPrefs.SetString("ws_activedperso", activedperso);
 
         }
         if (upgrade.Equals("Mage"))
         {
             myPerson.sprite = person[2];
             activedperso = upgrade;
-            ZPlayerPrefs.SetString("ws_activedperso", activedperso);
+            PlayerPrefs.SetString("ws_activedperso", activedperso);
             Debug.Log("oi2");
         }
         if (upgrade.Equals("Hippie"))
         {
             activedperso = upgrade;
             myPerson.sprite = person[3];
-            ZPlayerPrefs.SetString("ws_activedperso", activedperso);
+            PlayerPrefs.SetString("ws_activedperso", activedperso);
             Debug.Log("oi3");
         }
 

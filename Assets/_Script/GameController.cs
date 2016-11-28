@@ -41,9 +41,9 @@ public class GameController : MonoBehaviour
         }
         if (player.GetDead())
         {
-            if(ZPlayerPrefs.GetFloat("Record") < score)
+            if(ZPlayerPrefs.GetFloat("Record") < score && ZPlayerPrefs.GetFloat("Record") != score)
             {
-                ZPlayerPrefs.SetFloat("Record", score);
+               ZPlayerPrefs.SetFloat("Record", score);
             }
 
         }
