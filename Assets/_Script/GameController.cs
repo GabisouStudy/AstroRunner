@@ -31,6 +31,10 @@ public class GameController : MonoBehaviour
     {
         AudioGame.SetActive(true);
     }
+    public float GetScore()
+    {
+        return score;
+    }
     void Update()
     {
         if (!InputMouse.tuto && !InputMouse.menu && !AudioGame.activeSelf) Invoke("Actived_AudioGame", 4.4f);

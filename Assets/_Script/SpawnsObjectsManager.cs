@@ -5,9 +5,15 @@ public class SpawnsObjectsManager : MonoBehaviour {
 
     private Player player;
     [SerializeField]
+    private GameController gameController;
+    [SerializeField]
     private GameObject actual;
     [SerializeField]
     private GameObject[] tiles;
+    [SerializeField]
+    private int[] tilesEasy;
+    [SerializeField]
+    private int[] tilesMedium;
     private GameObject[] Spawned = new GameObject[20];
 
     private int height;
@@ -21,11 +27,20 @@ public class SpawnsObjectsManager : MonoBehaviour {
     {
         if (player.GetMoveSpeed() > 0 && player.GetDirection() > 0)
         {
-            int i = Random.Range(0, tiles.Length);
-            while(!actual.GetComponent<SpawnTileSet>().GetCanSpawn(i))
+            int i = 0;
+            do
             {
-                i = Random.Range(0, tiles.Length);
+                if (gameController.GetScore() > 200)
+                    i = Random.Range(0, tiles.Length);
+                else if (gameController.GetScore() > 120)
+                {
+                    i = tilesMedium[Random.Range(0, tilesMedium.Length)];
+                }
+                else
+                    i = tilesEasy[Random.Range(0, tilesEasy.Length)];
             }
+            while (!actual.GetComponent<SpawnTileSet>().GetCanSpawn(i));
+
             GameObject gameObject = (GameObject)Instantiate(tiles[i], actual.transform.position + Vector3.right * actual.GetComponent<SpawnTileSet>().GetMyEnd() *-1, Quaternion.identity);
             if(actual.tag.Equals("down"))
                 height -= 1;

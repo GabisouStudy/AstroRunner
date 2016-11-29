@@ -46,9 +46,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Image[] Botoes;
     void Start()
-    {
-  
-     
+    {     
         Botoes[0].enabled = true;
         Botoes[1].enabled = true;
         wallJumpClimb = new Vector2(5, 15);
@@ -164,8 +162,7 @@ public class Player : MonoBehaviour
 
                 if (velocity.y < -wallSlideSpeedMax && !invertGravity)
                 {
-                   velocity.y = -wallSlideSpeedMax;
-                  
+                   velocity.y = -wallSlideSpeedMax;                  
                 }
 
                 else if (velocity.y > wallSlideSpeedMax && invertGravity)
