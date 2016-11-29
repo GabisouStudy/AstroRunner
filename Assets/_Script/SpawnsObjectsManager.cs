@@ -16,7 +16,7 @@ public class SpawnsObjectsManager : MonoBehaviour {
     private int[] tilesMedium;
     private GameObject[] Spawned = new GameObject[20];
 
-    private int height;
+    private float height;
 
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -42,12 +42,10 @@ public class SpawnsObjectsManager : MonoBehaviour {
             while (!actual.GetComponent<SpawnTileSet>().GetCanSpawn(i));
 
             GameObject gameObject = (GameObject)Instantiate(tiles[i], actual.transform.position + Vector3.right * actual.GetComponent<SpawnTileSet>().GetMyEnd() *-1, Quaternion.identity);
-            if(actual.tag.Equals("down"))
-                height -= 1;
-            else if (actual.tag.Equals("up"))
-                height += 1;
             gameObject.GetComponent<SpawnTileSet>().ChangeHeight(height);
+            height += gameObject.GetComponent<SpawnTileSet>().GetEndHeight();
             actual = gameObject;
+            
         }
         Invoke("GeneratorOfMap", 1);
     }

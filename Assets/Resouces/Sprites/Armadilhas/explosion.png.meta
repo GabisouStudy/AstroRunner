@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: ad79190766a39ad4c84887868668057a
+timeCreated: 1480459372
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: explosion_4
+    21300002: explosion_5
+    21300004: explosion_6
+    21300006: explosion_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: explosion_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 300
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 24}
+        - {x: -24, y: 10}
+        - {x: -24, y: -10}
+        - {x: -10, y: -24}
+        - {x: 10, y: -24}
+        - {x: 24, y: -10}
+        - {x: 24, y: 10}
+        - {x: 10, y: 24}
+    - name: explosion_5
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 260
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 56}
+        - {x: -26, y: 56}
+        - {x: -56, y: 26}
+        - {x: -56, y: -26}
+        - {x: -26, y: -56}
+        - {x: 26, y: -56}
+        - {x: 56, y: -26}
+        - {x: 56, y: 26}
+    - name: explosion_6
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 120
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 146, y: -53}
+        - {x: 160, y: -25}
+        - {x: 160, y: 3}
+        - {x: 148, y: 33}
+        - {x: 160, y: 61}
+        - {x: 160, y: 108}
+        - {x: 131, y: 136}
+        - {x: 37, y: 134}
+        - {x: 36, y: 145}
+        - {x: 19, y: 160}
+        - {x: -19, y: 160}
+        - {x: -50, y: 133}
+        - {x: -97, y: 131}
+        - {x: -114, y: 116}
+        - {x: -130, y: 100}
+        - {x: -160, y: 66}
+        - {x: -160, y: 30}
+        - {x: -144, y: 14}
+        - {x: -130, y: 14}
+        - {x: -149, y: -47}
+        - {x: -146, y: -85}
+        - {x: -115, y: -113}
+        - {x: -99, y: -134}
+        - {x: -42, y: -160}
+        - {x: 50, y: -160}
+        - {x: 98, y: -112}
+        - {x: 114, y: -101}
+        - {x: 133, y: -65}
+    - name: explosion_7
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 60
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 88, y: -138}
+        - {x: 90, y: -136}
+        - {x: 105, y: -124}
+        - {x: 169, y: -124}
+        - {x: 188, y: -105}
+        - {x: 188, y: -44}
+        - {x: 202, y: -45}
+        - {x: 216, y: -5}
+        - {x: 216, y: 27}
+        - {x: 202, y: 56}
+        - {x: 203, y: 64}
+        - {x: 172, y: 95}
+        - {x: 138, y: 103}
+        - {x: 138, y: 120}
+        - {x: 136, y: 122}
+        - {x: 124, y: 162}
+        - {x: 84, y: 178}
+        - {x: 86, y: 154}
+        - {x: 40, y: 186}
+        - {x: 10, y: 216}
+        - {x: -42, y: 216}
+        - {x: -74, y: 184}
+        - {x: -74, y: 170}
+        - {x: -152, y: 170}
+        - {x: -154, y: 168}
+        - {x: -184, y: 154}
+        - {x: -186, y: 152}
+        - {x: -188, y: 102}
+        - {x: -202, y: 76}
+        - {x: -216, y: 59}
+        - {x: -216, y: -42}
+        - {x: -200, y: -58}
+        - {x: -142, y: -84}
+        - {x: -156, y: -87}
+        - {x: -156, y: -121}
+        - {x: -136, y: -138}
+        - {x: -124, y: -169}
+        - {x: -106, y: -188}
+        - {x: -44, y: -216}
+        - {x: -21, y: -216}
+        - {x: 9, y: -204}
+        - {x: 26, y: -188}
+        - {x: 42, y: -139}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

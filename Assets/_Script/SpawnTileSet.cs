@@ -11,6 +11,8 @@ public class SpawnTileSet : MonoBehaviour {
     private float myStart;
     [SerializeField]
     private float myEnd;
+    [SerializeField]
+    private float endHeight;
     void Start()
     {
         if (!first)
@@ -20,13 +22,17 @@ public class SpawnTileSet : MonoBehaviour {
     {
         return (canSpawn[i]);
     }
-    public void ChangeHeight(int h)
+    public void ChangeHeight(float h)
     {
-        transform.position = new Vector3(this.transform.position.x, h * 10, 0);
+        transform.position = new Vector3(this.transform.position.x, h, 0);
     }
     public float GetMyStart()
     {
         return (myStart);
+    }
+    public float GetEndHeight()
+    {
+        return (endHeight);
     }
     public float GetMyEnd()
     {
