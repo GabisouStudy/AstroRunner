@@ -56,7 +56,8 @@ public class LojaBehaviour : MonoBehaviour {
             player.SetMoney(ZPlayerPrefs.GetInt("ws_money"));
         else
         {
-            player.SetMoney(10000); Debug.Log("Set Money Teste");
+            player.SetMoney(0);
+            Debug.Log("Set Money Teste");
         }
         string[] acquiredUp;
         acquiredUp = ZPlayerPrefs.GetString("ws_myUpgrades").Split('|');
@@ -113,7 +114,7 @@ public class LojaBehaviour : MonoBehaviour {
         player.AddMoney(value);
         if (player.GetMoney() > 1000000)
             moneyState.text = ((Mathf.Floor(player.GetMoney() / 100000)) / 10).ToString() + "M";
-        else if (player.GetMoney() > 10000)
+        else if (player.GetMoney() > 1000)
             moneyState.text = ((Mathf.Floor(player.GetMoney() / 100)) / 10).ToString() + "K";
         else
             moneyState.text = player.GetMoney().ToString();
