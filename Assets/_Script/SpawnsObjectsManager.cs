@@ -32,7 +32,7 @@ public class SpawnsObjectsManager : MonoBehaviour {
             {
                 if (gameController.GetScore() > 200)
                     i = Random.Range(0, tiles.Length);
-                else if (gameController.GetScore() > 120)
+                else if (gameController.GetScore() > 100)
                 {
                     i = tilesMedium[Random.Range(0, tilesMedium.Length)];
                 }

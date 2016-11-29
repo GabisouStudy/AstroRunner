@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
         if (!InputMouse.tuto && !InputMouse.menu && !AudioGame.activeSelf) Invoke("Actived_AudioGame", 4.4f);
         if (player.GetMoveSpeed() > 0 && !player.GetDead() && player.GetDirection() > 0 && !InputMouse.menu && !InputMouse.tuto)
         {
-            score += 5 * Time.deltaTime;
+            score += 5 * Time.deltaTime * player.GetMoveSpeed()/10;
             t_Score.text = "" + Mathf.Floor(score);
         }
         if (player.GetDead())
