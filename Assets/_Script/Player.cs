@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     private float money;
     [SerializeField]
     private Image[] Botoes;
+    private bool hitMissel;
     void Start()
     {     
         Botoes[0].enabled = true;
@@ -73,6 +74,10 @@ public class Player : MonoBehaviour
     public float GetMoney()
     {
         return money;
+    }
+    public bool GetHitMissel()
+    {
+        return hitMissel;
     }
     public float SetMoney(float f)
     {
@@ -133,7 +138,8 @@ public class Player : MonoBehaviour
             if (animator.enabled) animator.enabled = false;
             spriteRenderer.sprite = sprite_Dead;
             camera_.transform.SetParent(null);
-            if(ZPlayerPrefs.GetInt("ws_money") != int.Parse(money.ToString())) ZPlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
+            //Encriptografar dps
+            if(PlayerPrefs.GetInt("ws_money") != int.Parse(money.ToString())) PlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
         }
         else if (!decrease && !InputMouse.menu && !InputMouse.tuto)
         {

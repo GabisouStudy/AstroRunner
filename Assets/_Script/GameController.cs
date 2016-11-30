@@ -45,9 +45,10 @@ public class GameController : MonoBehaviour
         }
         if (player.GetDead())
         {
-            if(ZPlayerPrefs.GetFloat("Record") < score && ZPlayerPrefs.GetFloat("Record") != score)
+            //Encriptografar dps namoral
+            if(PlayerPrefs.GetFloat("Record") < score && PlayerPrefs.GetFloat("Record") != score)
             {
-               ZPlayerPrefs.SetFloat("Record", score);
+               PlayerPrefs.SetFloat("Record", score);
             }
 
         }

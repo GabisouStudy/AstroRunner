@@ -15,6 +15,7 @@ public class StartSpawn : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             code.GeneratorOfMap();
+            Destroy(this.gameObject);
         }
 
     }
