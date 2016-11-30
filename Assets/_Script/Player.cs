@@ -204,7 +204,7 @@ public class Player : MonoBehaviour
                     spriteRenderer.flipX = true;
                 else spriteRenderer.flipX = false;
             }
-            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump() || Input.GetAxisRaw("Vertical") > 0)
+            if (Input.GetKeyDown(KeyCode.Space) || InputMouse_Up.GetJump() || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 Jump(wallSliding, wallDirX, int.Parse(input.x.ToString()));
             }
@@ -215,7 +215,10 @@ public class Player : MonoBehaviour
             if (controller.collisions.above || controller.collisions.below)
             {
                 velocity.y = 0;
+                hitMissel = false;
+
             }
+            else hitMissel = true;
 
 
             if (controller.collisions.below && invert_gravity.Equals(1) || controller.collisions.above && invert_gravity.Equals(-1))

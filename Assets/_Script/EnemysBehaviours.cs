@@ -67,15 +67,23 @@ public class EnemysBehaviours : MonoBehaviour {
         {
             this.GetComponent<AudioSource>().Stop();
             this.GetComponent<AudioSource>().Play();
-            if (!collision.gameObject.GetComponent<Player>().GetHitMissel())
+            if (collision.gameObject.GetComponent<Player>().GetHitMissel())
+            {
                 collision.gameObject.GetComponent<Player>().SetDead(true);
+                 Debug.Log("Morri");
+            }
             else
-                Fall();
+            {
+                collision.gameObject.GetComponent<Player>().Jump(false, 1, 1);
+                Debug.Log("Pulei");
+            }
+
+
         }  
     }
     void Fall()
     {
-        print("hehehe");
+       
     }
     void Delete()
     {
