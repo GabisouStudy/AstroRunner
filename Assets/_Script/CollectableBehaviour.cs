@@ -19,7 +19,14 @@ public class CollectableBehaviour : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Player"))
         {
             collision.gameObject.GetComponent<Player>().SetMoney((value.Equals(0))?1:value);
-            Destroy(this.gameObject);
+            this.GetComponent<AudioSource>().enabled=true;
+            this.GetComponent<AudioSource>().Play();
+            this.GetComponentInChildren<SpriteRenderer>().enabled = false;
         }
+    }
+    void Update()
+    {
+        if(!this.GetComponentInChildren<SpriteRenderer>().enabled && !this.GetComponent<AudioSource>().isPlaying)
+            Destroy(this.gameObject);
     }
 }

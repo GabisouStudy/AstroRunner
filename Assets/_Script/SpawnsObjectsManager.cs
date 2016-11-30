@@ -21,9 +21,8 @@ public class SpawnsObjectsManager : MonoBehaviour {
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         GameObject[] Spawned = new GameObject[20];
-        Invoke("GeneratorOfMap", 1);
 	}
-    void GeneratorOfMap()
+    public void GeneratorOfMap()
     {
         if (player.GetMoveSpeed() > 0 && player.GetDirection() > 0)
         {
@@ -47,7 +46,6 @@ public class SpawnsObjectsManager : MonoBehaviour {
             actual = gameObject;
             
         }
-        Invoke("GeneratorOfMap", 1);
     }
 
 }
