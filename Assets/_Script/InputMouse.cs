@@ -23,7 +23,7 @@ public class InputMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
             else
             {
-                if (this.tag.Equals("EditorOnly"))
+                if (this.tag.Equals("exit"))
                 {
                     this.gameObject.SetActive(false);
                     menu = false;
