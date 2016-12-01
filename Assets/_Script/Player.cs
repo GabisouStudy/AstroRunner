@@ -215,10 +215,10 @@ public class Player : MonoBehaviour
             if (controller.collisions.above || controller.collisions.below)
             {
                 velocity.y = 0;
-                hitMissel = false;
+                //hitMissel = false;
 
             }
-            else hitMissel = true;
+            //else hitMissel = true;
 
 
             if (controller.collisions.below && invert_gravity.Equals(1) || controller.collisions.above && invert_gravity.Equals(-1))
