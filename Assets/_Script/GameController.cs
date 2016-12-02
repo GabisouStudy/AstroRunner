@@ -15,11 +15,10 @@ public class GameController : MonoBehaviour
     void Start()
     {
         score = 0;
-        if (ZPlayerPrefs.HasKey("Record"))
+        if (PlayerPrefs.HasKey("Record"))
         {
-            recorde = ZPlayerPrefs.GetFloat("Record");
+            recorde = PlayerPrefs.GetFloat("Record");
         }
-
         else
         {
             recorde = 0;

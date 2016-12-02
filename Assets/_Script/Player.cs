@@ -41,15 +41,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool invertGravity;
     private int invert_gravity;
+    public bool doobleJump;
 
     private float money;
-    [SerializeField]
-    private Image[] Botoes;
-    private bool hitMissel;
     void Start()
     {     
-        Botoes[0].enabled = true;
-        Botoes[1].enabled = true;
         wallJumpClimb = new Vector2(5, 15);
         wallJumpOff = new Vector2(5, 15);
         wallLeap = new Vector2(3, 15);
@@ -74,10 +70,6 @@ public class Player : MonoBehaviour
     public float GetMoney()
     {
         return money;
-    }
-    public bool GetHitMissel()
-    {
-        return hitMissel;
     }
     public float SetMoney(float f)
     {
@@ -215,16 +207,12 @@ public class Player : MonoBehaviour
             if (controller.collisions.above || controller.collisions.below)
             {
                 velocity.y = 0;
-                //hitMissel = false;
-
             }
-            //else hitMissel = true;
 
 
             if (controller.collisions.below && invert_gravity.Equals(1) || controller.collisions.above && invert_gravity.Equals(-1))
             {
                 velocity.y = 0;
-                //velocity.y bug
                 if (InputMouse_Down.GetShrink() || Input.GetAxisRaw("Vertical") < 0)
                 {
                     if (animator.enabled) animator.enabled = false;
@@ -254,7 +242,6 @@ public class Player : MonoBehaviour
                         if (!animator.enabled) animator.enabled = true;
 
                     }
-                    //else Debug.Log(hit.collider.gameObject);
 
                 }
                 else if (controller.collisions.above)
@@ -270,7 +257,6 @@ public class Player : MonoBehaviour
                         if (!animator.enabled) animator.enabled = true;
 
                     }
-                    //else Debug.Log(hit.collider.gameObject);
 
                 }
             }
@@ -313,6 +299,16 @@ public class Player : MonoBehaviour
         else if (controller.collisions.above && invert_gravity.Equals(-1) && !croushe)
         {
             velocity.y = maxJumpVelocity * invert_gravity;
+        }
+        else if(doobleJump && invert_gravity.Equals(1) && !croushe)
+        {
+            velocity.y = maxJumpVelocity;
+            doobleJump = false;
+        }
+        else if (doobleJump && invert_gravity.Equals(-1) && !croushe)
+        {
+            velocity.y = maxJumpVelocity * invert_gravity;
+            doobleJump = false;
         }
     }
     public void Jump()

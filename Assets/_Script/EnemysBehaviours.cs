@@ -10,8 +10,10 @@ public class EnemysBehaviours : MonoBehaviour {
     public int rageAlert;
     public int rageAlertY;
     public Sprite spriteAlert;
+    private bool fallingDown;
 
-	void Start () {
+
+    void Start () {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = this.GetComponent<Rigidbody2D>();
         alert = false;
@@ -36,11 +38,12 @@ public class EnemysBehaviours : MonoBehaviour {
     {
         if(alert)
         {
-            if(rageAlert > 0)
-                rigidbody.velocity =-Vector2.right * 6;
+            if (rageAlert > 0)
+                rigidbody.velocity = (fallingDown ? new Vector2(-0.8f, -0.3f) : new Vector2(-1f, 0)) * 6;
             else
-                rigidbody.velocity = Vector2.right * 6;
+                rigidbody.velocity = (fallingDown ? new Vector2(0.8f, -0.3f) : new Vector2(1f, 0)) * 6;
             this.GetComponent<SpriteRenderer>().sprite = spriteAlert;
+           
         }
         else  
         {
@@ -67,26 +70,26 @@ public class EnemysBehaviours : MonoBehaviour {
         {
             this.GetComponent<AudioSource>().Stop();
             this.GetComponent<AudioSource>().Play();
-            if (!collision.gameObject.GetComponent<Player>().GetHitMissel())
-            {
-                collision.gameObject.GetComponent<Player>().SetDead(true);
-                 Debug.Log("Morri");
-            }
-            else
-            {
-                //collision.gameObject.GetComponent<Player>().Jump(false, 1, 1);
-                Debug.Log("Pulei");
-            }
+            collision.gameObject.GetComponent<Player>().SetDead(true);
 
 
         }  
     }
-    void Fall()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-       
+
+        if (collision.tag.Equals("Player") && type.Equals("Rocket") && alert)
+        {
+            collision.gameObject.GetComponent<Player>().doobleJump = true;
+
+            collision.gameObject.GetComponent<Player>().Jump(false,1,1);
+            fallingDown = true;
+
+        }
     }
     void Delete()
     {
         Destroy(this.gameObject);
     }
+  
 }

@@ -52,13 +52,9 @@ public class LojaBehaviour : MonoBehaviour {
         else
             mySkins = null;
 
-        if (ZPlayerPrefs.HasKey("ws_money"))
-            player.SetMoney(ZPlayerPrefs.GetInt("ws_money"));
-        else
-        {
-            player.SetMoney(0);
-            Debug.Log("Set Money Teste");
-        }
+        if (PlayerPrefs.HasKey("ws_money"))
+            player.SetMoney(PlayerPrefs.GetInt("ws_money"));
+    
         string[] acquiredUp;
         acquiredUp = ZPlayerPrefs.GetString("ws_myUpgrades").Split('|');
         foreach (string verify in acquiredUp)
@@ -106,7 +102,7 @@ public class LojaBehaviour : MonoBehaviour {
 
     public void ResetarDados()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         GetDada();
     }
     public void SumCoin(int value)
@@ -118,7 +114,7 @@ public class LojaBehaviour : MonoBehaviour {
             moneyState.text = ((Mathf.Floor(player.GetMoney() / 100)) / 10).ToString() + "K";
         else
             moneyState.text = player.GetMoney().ToString();
-        ZPlayerPrefs.SetInt("ws_money", int.Parse(player.GetMoney().ToString()));
+        PlayerPrefs.SetInt("ws_money", int.Parse(player.GetMoney().ToString()));
 	}
   
     public void SetValue(float values)
