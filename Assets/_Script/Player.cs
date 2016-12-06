@@ -269,6 +269,7 @@ public class Player : MonoBehaviour
 
         }
     }
+
     public void Jump(bool wallSliding, int wallDirX, int input)
     {
         InputMouse_Up.SetJump(false);
