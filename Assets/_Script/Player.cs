@@ -92,6 +92,7 @@ public class Player : MonoBehaviour
     }
     public void SetDead(bool j) { dead = j; }
     public float GetMoveSpeed() { return moveSpeed; }
+    public Vector3 GetActualSpeed() { return velocity; }
     public int GetDirection() { return direction; }
     void Update()
     {
@@ -129,7 +130,7 @@ public class Player : MonoBehaviour
             controller.Move(velocity * Time.deltaTime, input);
             if (animator.enabled) animator.enabled = false;
             spriteRenderer.sprite = sprite_Dead;
-            camera_.transform.SetParent(null);
+            //camera_.transform.SetParent(null);
             //Encriptografar dps
             if(PlayerPrefs.GetInt("ws_money") != int.Parse(money.ToString())) PlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
         }

@@ -22,6 +22,8 @@ namespace UnityStandardAssets.Cameras
         private float m_CurrentTurnAmount; // How much to turn the camera
         private float m_TurnSpeedVelocityChange; // The change in the turn speed velocity
         private Vector3 m_RollUp = Vector3.up;// The roll of the camera around the z axis ( generally this will always just be up )
+        private bool finished = false;
+        private Vector3 lastPosition = Vector3.zero;
 
 
         protected override void FollowTarget(float deltaTime)
@@ -83,10 +85,19 @@ namespace UnityStandardAssets.Cameras
                 }
                 m_LastFlatAngle = currentFlatAngle;
             }
-
             // camera position moves towards target position:
-            transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime*m_MoveSpeed);
-
+            if (!m_Target.GetComponent<Player>().GetDead())
+            {
+                transform.position = Vector3.Lerp(transform.position, m_Target.position + m_Target.GetComponent<Player>().GetActualSpeed().x * Vector3.right * 0.5f, deltaTime * m_MoveSpeed);
+                finished = false;
+            }
+            else 
+            {
+                if (!finished)
+                    lastPosition = m_Target.position;
+                transform.position = Vector3.Lerp(transform.position, lastPosition, deltaTime * m_MoveSpeed);
+                finished = true;
+            }
             // camera's rotation is split into two parts, which can have independend speed settings:
             // rotating towards the target's forward direction (which encompasses its 'yaw' and 'pitch')
             if (!m_FollowTilt)
