@@ -20,10 +20,15 @@ public class LojaBehaviour : MonoBehaviour {
     [SerializeField]
     private int[] valuesSkins;
 
+    public GameObject earnButton;
+
     void Awake()
     {
         InicializeEncryotion();
-
+#if !(UNITY_ANDROID || UNITY_IOS || UNITY_EDITOR)
+        if (earnButton != null)
+            Destroy(earnButton);
+#endif
     }
     void InicializeEncryotion()
     {
@@ -36,6 +41,16 @@ public class LojaBehaviour : MonoBehaviour {
             }
         }
     }
+
+    public void GetFreeCoins()
+    {
+        AdsController.Init();
+        AdsController.ShowRewardedAd(() =>
+        {
+            SumCoin(100);
+        });
+    }
+
     void Start()
     {
         GetDada();
@@ -52,8 +67,7 @@ public class LojaBehaviour : MonoBehaviour {
         else
             mySkins = null;
 
-        if (PlayerPrefs.HasKey("ws_money"))
-            player.SetMoney(PlayerPrefs.GetInt("ws_money"));
+        player.SetMoney(PlayerPrefs.GetInt("ws_money", 0));
     
         string[] acquiredUp;
         acquiredUp = ZPlayerPrefs.GetString("ws_myUpgrades").Split('|');
@@ -102,8 +116,10 @@ public class LojaBehaviour : MonoBehaviour {
 
     public void ResetarDados()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
+        ZPlayerPrefs.DeleteAll();
         GetDada();
+        SumCoin(Mathf.FloorToInt(-player.GetMoney()));
     }
     public void SumCoin(int value)
 	{
@@ -158,7 +174,7 @@ public class LojaBehaviour : MonoBehaviour {
         {
             mySkins += "|" + skinSelected;
             ActiveUpgrade(text);
-            SumCoin(int.Parse((value * -1).ToString()));
+            SumCoin(int.Parse((-value).ToString()));
             ZPlayerPrefs.SetString("ws_myUpgrades", mySkins);
             Debug.Log("oi");
         }

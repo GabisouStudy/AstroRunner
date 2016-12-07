@@ -16,6 +16,8 @@ public class MenuController : MonoBehaviour {
     [SerializeField]
     private Sprite sprite;
     [SerializeField]
+    private GameObject[] store;
+    [SerializeField]
     private SpriteRenderer spriteR;
     [SerializeField]
     private Animator music;
@@ -39,6 +41,8 @@ public class MenuController : MonoBehaviour {
                 logo.SetActive(false);
                 tuto.SetActive(true);
                 tut.SetActive(true);
+                foreach(GameObject _store in store)
+                    _store.SetActive(false);
                 g = 1;
             }
             if (!InputMouse.tuto && g.Equals(1))

@@ -31,7 +31,8 @@ public class AdsController : MonoBehaviour {
 		if(!ShowRewardedUnity())
 			Debug.Log("No rewards available :/ Try again later");
 #else
-        Callback();
+        if(callback != null)
+            callback();
 #endif
     }
 
