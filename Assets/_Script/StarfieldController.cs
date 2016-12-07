@@ -2,7 +2,10 @@
 using System.Collections;
 
 public class StarfieldController : MonoBehaviour {
-    private static StarfieldController instance;
+
+    [SerializeField]
+    private float zDistance = 1f;
+
     private float speed;
 
     [SerializeField]
@@ -11,34 +14,26 @@ public class StarfieldController : MonoBehaviour {
     private Vector3 lastCameraPos;
     private bool isStart = true;
 
+    private float calcR;
+
     private Transform camera;
-	
-    // Use this for initialization
-	void Awake () {
-        instance = this;
-	}
 
     void Start()
     {
         camera = GameObject.Find("MultipurposeCameraRig").transform;
         lastCameraPos = new Vector3(-17.77999f, 1.32f, 0f);
-    }
-
-    public static void SetSpeed(float speed)
-    {
-        if (instance != null)
-            instance._SetSpeed(speed);
-    }
-
-    private void _SetSpeed(float speed)
-    {
-        this.speed = speed;
+        UpdateCalcR();
     }
 
     void Update()
     {
         speed = (camera.position.x - lastCameraPos.x) * 50;
         lastCameraPos = camera.position;
+    }
+
+    void UpdateCalcR()
+    {
+        calcR = 1 - (1 / zDistance);
     }
 
     void LateUpdate()
@@ -48,7 +43,7 @@ public class StarfieldController : MonoBehaviour {
             if (particle == null)
                 continue;
             ParticleSystem.Particle[] particles = new ParticleSystem.Particle[particle.particleCount];
-            Vector3 vec = new Vector3(speed * .95f, 0, 0);
+            Vector3 vec = new Vector3(speed * calcR, 0, 0);
             int count = particle.GetParticles(particles);
             for (int i = 0; i < count; i++)
             {
@@ -56,10 +51,5 @@ public class StarfieldController : MonoBehaviour {
             }
             particle.SetParticles(particles, count);
         }
-    }
-
-    void OnDestroy()
-    {
-        instance = null;
     }
 }
