@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public bool doobleJump;
 
     private float money;
+
     void Start()
     {     
         wallJumpClimb = new Vector2(5, 15);
