@@ -133,7 +133,8 @@ public class Player : MonoBehaviour
             spriteRenderer.sprite = sprite_Dead;
             //camera_.transform.SetParent(null);
             //Encriptografar dps
-            if(PlayerPrefs.GetInt("ws_money") != int.Parse(money.ToString())) PlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
+    
+            if (PlayerPrefs.GetInt("ws_money") != int.Parse(money.ToString())) PlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
         }
         else if (!decrease && !InputMouse.menu && !InputMouse.tuto)
         {

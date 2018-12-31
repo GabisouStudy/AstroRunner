@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     private Player player;
     [SerializeField]
     private GameObject AudioGame;
+    [SerializeField]
+    private FacebookAndPlayFabFunctions facebookAndPlayFabFunctions;
 
 
     void Start()
@@ -48,6 +50,7 @@ public class GameController : MonoBehaviour
             if(PlayerPrefs.GetFloat("Record") < score && PlayerPrefs.GetFloat("Record") != score)
             {
                PlayerPrefs.SetFloat("Record", score);
+               facebookAndPlayFabFunctions.SetUserData((int) score);
             }
 
         }
