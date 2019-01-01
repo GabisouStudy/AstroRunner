@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using UnityEngine.Advertisements;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
@@ -82,7 +82,13 @@ public class Player : MonoBehaviour
     }
     void GameOver()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        int number = Random.Range(0, 2);
+        if(number == 1)
+        {
+            this.ShowRewardedAd();
+        }
+        else Application.LoadLevel(Application.loadedLevel); 
+
     }
     public bool GetCroushe() { return croushe; }
     public bool GetDead() { return dead; }
@@ -95,6 +101,36 @@ public class Player : MonoBehaviour
     public float GetMoveSpeed() { return moveSpeed; }
     public Vector3 GetActualSpeed() { return velocity; }
     public int GetDirection() { return direction; }
+
+    private void HandleShowResult(ShowResult result)
+    {
+       
+        switch (result)
+        {
+            case ShowResult.Finished:
+                Debug.Log("The ad was successfully shown.");
+                //
+                // YOUR CODE TO REWARD THE GAMER
+                // Give coins etc.
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("The ad was skipped before reaching the end.");
+                break;      
+            case ShowResult.Failed:
+                Debug.LogError("The ad failed to be shown.");
+                break;
+        }
+        Application.LoadLevel(Application.loadedLevel);
+    }
+    public void ShowRewardedAd()
+    {
+        if (Advertisement.IsReady("rewardedVideo"))
+        {
+            var options = new ShowOptions { resultCallback = HandleShowResult };
+            Advertisement.Show("rewardedVideo", options);
+          
+        }
+    }
     void Update()
     {
    
@@ -121,6 +157,7 @@ public class Player : MonoBehaviour
         }
         if (dead && !decrease)
         {
+         
             Invoke("Decrease", 0.2f);
             Vector2 input = new Vector2(0, 0);
             velocity.y = wallLeap.y;
@@ -131,9 +168,10 @@ public class Player : MonoBehaviour
             controller.Move(velocity * Time.deltaTime, input);
             if (animator.enabled) animator.enabled = false;
             spriteRenderer.sprite = sprite_Dead;
+
             //camera_.transform.SetParent(null);
             //Encriptografar dps
-            if(PlayerPrefs.GetInt("ws_money") != int.Parse(money.ToString())) PlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
+            if (PlayerPrefs.GetInt("ws_money") != int.Parse(money.ToString())) PlayerPrefs.SetInt("ws_money", int.Parse(money.ToString()));
         }
         else if (!decrease && !InputMouse.menu && !InputMouse.tuto)
         {
